@@ -4,41 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HAKİKATİN İZİNDE | Haber, Gündem ve Gazetecilik</title>
+    <title>HAKİKATİN İZİNDE | Gazeteci • Muhabir • İçerik Üreticisi</title>
 
-    <meta name="description" content="Hakikatin İzinde - Haber, gündem, Mersin, Türkiye, dünya, İslam, video ve gazetecilik içerikleri.">
-    <meta name="author" content="Hakikatin İzinde">
+    <meta
+        name="description"
+        content="Emre Ekinci | Gazeteci, muhabir ve içerik üreticisi. Haberler, röportajlar, video çalışmaları, fotoğraflar ve kişisel projeler."
+    >
+
+    <meta name="author" content="Emre Ekinci">
+
+    <meta property="og:title" content="HAKİKATİN İZİNDE">
+    <meta
+        property="og:description"
+        content="Gazeteci • Muhabir • İçerik Üreticisi"
+    >
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+
+         BURAYA KENDİ GOOGLE ANALYTICS ÖLÇÜM KODUNU EKLEYECEĞİZ.
+
+         ÖRNEK:
+         G-XXXXXXXXXX
+
+         ID'yi daha sonra değiştireceğiz.
+    ====================================================== -->
+
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
 
     <style>
+
         :root {
-            --bg: #07090d;
-            --bg-soft: #0c1016;
-            --surface: #10151d;
-            --surface-2: #151b24;
-            --surface-3: #1b222d;
 
-            --text: #f5f7fa;
-            --text-soft: #adb6c4;
-            --text-muted: #747f90;
+            --bg: #06080c;
+            --bg2: #090c12;
+            --surface: #0e131b;
+            --surface2: #131923;
 
-            --accent: #e21d2f;
-            --accent-dark: #a80f1c;
-            --accent-light: #ff4b5c;
+            --white: #f6f7f9;
+            --soft: #b5beca;
+            --muted: #727c8a;
 
-            --border: rgba(255,255,255,0.08);
-            --border-strong: rgba(255,255,255,0.14);
+            --red: #df1f32;
+            --red2: #ff4b5c;
 
-            --max: 1280px;
+            --border: rgba(255,255,255,.08);
+            --border2: rgba(255,255,255,.15);
 
-            --shadow: 0 20px 60px rgba(0,0,0,0.35);
-            --radius: 16px;
-            --transition: 0.25s ease;
+            --max: 1180px;
+
+            --radius: 18px;
+
+            --shadow:
+                0 25px 70px rgba(0,0,0,.40);
+
+            --transition:
+                .25s ease;
         }
+
 
         * {
             margin: 0;
@@ -46,2045 +94,2300 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: "Inter", sans-serif;
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
             background:
-                radial-gradient(circle at 80% 0%, rgba(226,29,47,0.08), transparent 28%),
+                radial-gradient(
+                    circle at 85% 0%,
+                    rgba(223,31,50,.12),
+                    transparent 28%
+                ),
                 var(--bg);
-            color: var(--text);
+
+            color: var(--white);
+
             line-height: 1.6;
+
             overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.012) 1px,
+                    transparent 1px
+                );
+
+            background-size: 100% 4px;
+
+            opacity: .25;
+
+            z-index: -1;
         }
 
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
         img {
-            width: 100%;
+            max-width: 100%;
             display: block;
         }
 
-        button {
+
+        button,
+        input,
+        textarea {
+
             font-family: inherit;
         }
 
+
         .container {
-            width: min(var(--max), calc(100% - 40px));
-            margin: 0 auto;
+
+            width:
+                min(
+                    var(--max),
+                    calc(100% - 40px)
+                );
+
+            margin: auto;
         }
 
-        /* =====================================================
-           TOP BAR
-        ===================================================== */
 
-        .topbar {
-            background: #050609;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-soft);
-            font-size: 12px;
-        }
-
-        .topbar-inner {
-            min-height: 36px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .topbar-left,
-        .topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .topbar span {
-            white-space: nowrap;
-        }
-
-        /* =====================================================
+        /* =============================================
            HEADER
-        ===================================================== */
+        ============================================== */
 
         header {
-            position: sticky;
+
+            position: fixed;
+
             top: 0;
+            left: 0;
+            right: 0;
+
             z-index: 1000;
-            background: rgba(7, 9, 13, 0.93);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-        }
 
-        .header-main {
-            min-height: 88px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 13px;
-            min-width: max-content;
-        }
-
-        .brand-mark {
-            width: 42px;
-            height: 42px;
-            border: 2px solid var(--accent);
-            display: grid;
-            place-items: center;
-            transform: rotate(45deg);
-        }
-
-        .brand-mark span {
-            transform: rotate(-45deg);
-            font-size: 18px;
-            font-weight: 900;
-            color: var(--accent);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1;
-        }
-
-        .brand-title {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-subtitle {
-            font-size: 9px;
-            letter-spacing: 2.6px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-top: 7px;
-        }
-
-        .desktop-nav {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .desktop-nav a {
-            padding: 10px 12px;
-            border-radius: 8px;
-            color: var(--text-soft);
-            font-size: 13px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .desktop-nav a:hover,
-        .desktop-nav a.active {
-            color: white;
-            background: rgba(255,255,255,0.06);
-        }
-
-        .desktop-nav a.active {
-            color: var(--accent-light);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .icon-btn {
-            width: 42px;
-            height: 42px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
-            color: white;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .icon-btn:hover {
-            border-color: rgba(226,29,47,0.5);
-            background: rgba(226,29,47,0.1);
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
-
-        .mobile-menu {
-            display: none;
-            background: #090c11;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-menu.open {
-            display: block;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 14px 20px;
-            color: var(--text-soft);
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* =====================================================
-           BREAKING NEWS
-        ===================================================== */
-
-        .breaking {
-            background: linear-gradient(90deg, #12070a, #100c10, #12070a);
-            border-bottom: 1px solid rgba(226,29,47,0.18);
-        }
-
-        .breaking-inner {
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .breaking-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent);
-            color: white;
-            padding: 7px 12px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            border-radius: 5px;
-            white-space: nowrap;
-        }
-
-        .breaking-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: white;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.35;
-            }
-        }
-
-        .breaking-text {
-            color: #d9dee6;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 13px;
-        }
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            padding: 34px 0 55px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 18px;
-        }
-
-        .hero-main {
-            position: relative;
-            height: 520px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            isolation: isolate;
-            box-shadow: var(--shadow);
-        }
-
-        .hero-main::after {
-            content: "";
-            position: absolute;
-            inset: 0;
             background:
-                linear-gradient(
-                    to top,
-                    rgba(3,5,8,0.95) 0%,
-                    rgba(3,5,8,0.55) 42%,
-                    rgba(3,5,8,0.02) 100%
-                );
-            z-index: 1;
+                rgba(6,8,12,.78);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
-        .hero-main img {
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
 
-        .hero-main:hover img {
-            transform: scale(1.04);
-        }
+        .nav {
 
-        .hero-content {
-            position: absolute;
-            left: 34px;
-            right: 34px;
-            bottom: 30px;
-            z-index: 2;
-        }
+            min-height: 82px;
 
-        .category {
-            display: inline-flex;
-            padding: 6px 10px;
-            border-radius: 5px;
-            background: var(--accent);
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .hero-title {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(30px, 4vw, 51px);
-            line-height: 1.05;
-            max-width: 800px;
-            margin-bottom: 15px;
-            letter-spacing: -0.6px;
-        }
-
-        .hero-description {
-            color: #d9dee7;
-            max-width: 680px;
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-
-        .meta {
             display: flex;
+
             align-items: center;
-            gap: 13px;
-            color: var(--text-muted);
-            font-size: 11px;
-        }
 
-        .hero-side {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .side-card {
-            position: relative;
-            min-height: 251px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            isolation: isolate;
-            border: 1px solid var(--border);
-        }
-
-        .side-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(4,6,9,0.94), rgba(4,6,9,0.05));
-        }
-
-        .side-card img {
-            height: 100%;
-            object-fit: cover;
-            transition: 0.6s ease;
-        }
-
-        .side-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .side-content {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            z-index: 2;
-        }
-
-        .side-title {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            line-height: 1.15;
-            margin-bottom: 9px;
-        }
-
-        /* =====================================================
-           SECTION
-        ===================================================== */
-
-        .section {
-            padding: 10px 0 65px;
-        }
-
-        .section-heading {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 22px;
-            gap: 20px;
-        }
 
-        .section-heading-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-line {
-            width: 4px;
-            height: 27px;
-            border-radius: 10px;
-            background: var(--accent);
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.6px;
-        }
-
-        .section-link {
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .section-link:hover {
-            color: var(--accent-light);
-        }
-
-        /* =====================================================
-           NEWS CARDS
-        ===================================================== */
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .news-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-strong);
-            box-shadow: var(--shadow);
-        }
-
-        .news-image {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .news-image img {
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .news-card:hover .news-image img {
-            transform: scale(1.05);
-        }
-
-        .news-tag {
-            position: absolute;
-            left: 13px;
-            top: 13px;
-            background: rgba(0,0,0,0.78);
-            backdrop-filter: blur(8px);
-            color: #fff;
-            padding: 6px 8px;
-            border-radius: 4px;
-            font-size: 9px;
-            letter-spacing: 0.9px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .news-body {
-            padding: 19px;
-        }
-
-        .news-title {
-            font-family: "Playfair Display", serif;
-            font-size: 21px;
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-
-        .news-summary {
-            color: var(--text-soft);
-            font-size: 13px;
-            line-height: 1.65;
-            margin-bottom: 15px;
-        }
-
-        /* =====================================================
-           TWO COLUMN NEWS AREA
-        ===================================================== */
-
-        .content-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
-
-        .list-card {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 18px;
-            padding: 15px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 14px;
-            transition: var(--transition);
-        }
-
-        .list-card:hover {
-            border-color: var(--border-strong);
-            background: var(--surface-2);
-        }
-
-        .list-image {
-            height: 145px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .list-image img {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .list-body {
-            padding: 5px 5px 5px 0;
-        }
-
-        .list-title {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            line-height: 1.2;
-            margin: 9px 0;
-        }
-
-        .list-summary {
-            color: var(--text-soft);
-            font-size: 12px;
-            line-height: 1.65;
-        }
-
-        /* =====================================================
-           SIDE PANEL
-        ===================================================== */
-
-        .side-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .widget {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-        }
-
-        .widget-head {
-            padding: 17px 18px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .widget-title {
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        .widget-head span {
-            color: var(--accent-light);
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .widget-body {
-            padding: 18px;
-        }
-
-        .currency-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .currency-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .currency-name {
-            font-size: 12px;
-            color: var(--text-soft);
-        }
-
-        .currency-value {
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        .up {
-            color: #66d19e;
-            font-size: 10px;
-            margin-left: 6px;
-        }
-
-        .pharmacy {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .pharmacy:last-child {
-            border-bottom: none;
-        }
-
-        .pharmacy strong {
-            display: block;
-            font-size: 13px;
-            margin-bottom: 4px;
-        }
-
-        .pharmacy span {
-            color: var(--text-muted);
-            font-size: 11px;
-        }
-
-        .pharmacy-badge {
-            display: inline-block;
-            margin-top: 7px;
-            background: rgba(226,29,47,0.12);
-            color: #ff7582;
-            border: 1px solid rgba(226,29,47,0.2);
-            border-radius: 4px;
-            padding: 4px 7px;
-            font-size: 9px;
-            font-weight: 800;
-        }
-
-        /* =====================================================
-           MERSIN FEATURE
-        ===================================================== */
-
-        .mersin-feature {
-            background:
-                linear-gradient(120deg, rgba(7,9,13,0.96), rgba(7,9,13,0.76)),
-                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80") center/cover;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            min-height: 380px;
-            display: flex;
-            align-items: flex-end;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mersin-feature::before {
-            content: "";
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            right: -100px;
-            top: -130px;
-            background: rgba(226,29,47,0.13);
-            border-radius: 50%;
-            filter: blur(4px);
-        }
-
-        .mersin-content {
-            max-width: 700px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            color: var(--accent-light);
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .mersin-title {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(32px, 4vw, 53px);
-            line-height: 1.04;
-            margin-bottom: 13px;
-        }
-
-        .mersin-text {
-            max-width: 620px;
-            color: #c7ced8;
-            font-size: 14px;
-        }
-
-        /* =====================================================
-           CATEGORY STRIP
-        ===================================================== */
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .category-box {
-            min-height: 150px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: linear-gradient(145deg, var(--surface), #0b0f15);
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .category-box::before {
-            content: "";
-            position: absolute;
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            right: -25px;
-            bottom: -40px;
-            background: rgba(226,29,47,0.1);
-        }
-
-        .category-box:hover {
-            transform: translateY(-4px);
-            border-color: rgba(226,29,47,0.3);
-        }
-
-        .category-number {
-            color: var(--text-muted);
-            font-size: 11px;
-            margin-bottom: 30px;
-        }
-
-        .category-name {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* =====================================================
-           VIDEO SECTION
-        ===================================================== */
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 18px;
-        }
-
-        .video-card {
-            position: relative;
-            min-height: 250px;
-            overflow: hidden;
-            border-radius: 15px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-        }
-
-        .video-card.large {
-            min-height: 350px;
-        }
-
-        .video-card img {
-            position: absolute;
-            inset: 0;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.6s ease;
-        }
-
-        .video-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(4,6,9,0.95), rgba(4,6,9,0.05));
-        }
-
-        .video-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .play {
-            position: absolute;
-            top: 18px;
-            left: 18px;
-            width: 42px;
-            height: 42px;
-            display: grid;
-            place-items: center;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(6px);
-            border-radius: 50%;
-            z-index: 3;
-            font-size: 15px;
-        }
-
-        .video-content {
-            position: absolute;
-            left: 20px;
-            right: 20px;
-            bottom: 18px;
-            z-index: 3;
-        }
-
-        .video-title {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            line-height: 1.15;
-        }
-
-        .large .video-title {
-            font-size: 29px;
-        }
-
-        /* =====================================================
-           PROFILE
-        ===================================================== */
-
-        .profile-section {
-            background:
-                radial-gradient(circle at 90% 30%, rgba(226,29,47,0.10), transparent 26%),
-                var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 35px;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
             gap: 25px;
         }
 
-        .profile-avatar {
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            border: 2px solid rgba(226,29,47,0.5);
-            padding: 4px;
-            background: #0b0e13;
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
         }
 
-        .profile-avatar div {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
+
+        .logo-symbol {
+
+            width: 40px;
+            height: 40px;
+
+            border:
+                2px solid var(--red);
+
+            transform: rotate(45deg);
+
             display: grid;
+
             place-items: center;
-            background: linear-gradient(145deg, #1a202b, #090b10);
-            font-size: 28px;
+        }
+
+
+        .logo-symbol span {
+
+            transform: rotate(-45deg);
+
+            font-size: 16px;
+
             font-weight: 900;
+
+            color: var(--red2);
         }
 
-        .profile-title {
-            font-family: "Playfair Display", serif;
-            font-size: 31px;
-            margin-bottom: 6px;
+
+        .logo-text {
+
+            line-height: 1;
         }
 
-        .profile-role {
-            color: var(--accent-light);
-            font-size: 11px;
+
+        .logo-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 21px;
+
             font-weight: 800;
-            letter-spacing: 1.3px;
+
+            letter-spacing: .5px;
+        }
+
+
+        .logo-sub {
+
+            font-size: 8px;
+
+            letter-spacing:
+                2.4px;
+
+            color: var(--muted);
+
+            margin-top: 7px;
+
             text-transform: uppercase;
-            margin-bottom: 10px;
         }
 
-        .profile-text {
-            color: var(--text-soft);
-            max-width: 680px;
-            font-size: 13px;
-        }
 
-        .profile-button {
-            display: inline-flex;
+        nav {
+
+            display: flex;
+
             align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(226,29,47,0.4);
-            background: rgba(226,29,47,0.1);
-            color: white;
-            border-radius: 9px;
-            padding: 12px 18px;
+
+            gap: 3px;
+        }
+
+
+        nav a {
+
+            padding:
+                10px 13px;
+
+            color: var(--soft);
+
             font-size: 12px;
-            font-weight: 800;
-            transition: var(--transition);
+
+            font-weight: 600;
+
+            border-radius: 8px;
+
+            transition:
+                var(--transition);
         }
 
-        .profile-button:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
 
-        /* =====================================================
-           NEWSLETTER
-        ===================================================== */
+        nav a:hover {
 
-        .newsletter {
-            margin-top: 20px;
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
+            color: white;
+
             background:
-                linear-gradient(110deg, rgba(226,29,47,0.12), rgba(13,17,23,0.95)),
-                var(--surface);
+                rgba(255,255,255,.06);
         }
 
-        .newsletter-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
+
+        .nav-contact {
+
+            background:
+                var(--red);
+
+            color: white !important;
+
+            padding:
+                10px 16px;
+
         }
 
-        .newsletter-title {
-            font-family: "Playfair Display", serif;
-            font-size: 28px;
-            margin-bottom: 5px;
+
+        .nav-contact:hover {
+
+            background:
+                var(--red2);
+
+            transform:
+                translateY(-1px);
         }
 
-        .newsletter-text {
-            color: var(--text-soft);
-            font-size: 12px;
-        }
 
-        .newsletter-form {
-            display: flex;
-            min-width: 400px;
-        }
+        .menu-btn {
 
-        .newsletter-form input {
-            flex: 1;
-            min-width: 0;
-            background: #080b10;
-            border: 1px solid var(--border-strong);
-            color: white;
-            padding: 13px 15px;
-            border-radius: 8px 0 0 8px;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            border: none;
-            background: var(--accent);
-            color: white;
-            font-weight: 800;
-            padding: 0 18px;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
-        }
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            margin-top: 70px;
-            border-top: 1px solid var(--border);
-            background: #050609;
-        }
-
-        .footer-main {
-            padding: 45px 0;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 30px;
-        }
-
-        .footer-brand {
-            max-width: 350px;
-        }
-
-        .footer-brand .brand {
-            margin-bottom: 18px;
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 12px;
-            line-height: 1.8;
-        }
-
-        .footer-heading {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .footer-links {
-            display: grid;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            font-size: 12px;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding: 18px 0;
-            color: var(--text-muted);
-            font-size: 10px;
-        }
-
-        .footer-bottom-inner {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        /* =====================================================
-           SEARCH MODAL
-        ===================================================== */
-
-        .search-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(0,0,0,0.78);
-            backdrop-filter: blur(15px);
             display: none;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 100px 20px;
-        }
 
-        .search-overlay.open {
-            display: flex;
-        }
+            width: 42px;
+            height: 42px;
 
-        .search-box {
-            width: min(700px, 100%);
-            background: var(--surface);
-            border: 1px solid var(--border-strong);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-        }
+            border:
+                1px solid var(--border2);
 
-        .search-input-wrap {
-            display: flex;
-            gap: 10px;
-        }
+            background:
+                rgba(255,255,255,.03);
 
-        .search-input-wrap input {
-            flex: 1;
-            background: #090c11;
-            border: 1px solid var(--border);
             color: white;
-            padding: 16px;
-            border-radius: 10px;
-            outline: none;
-        }
 
-        .close-search {
-            width: 50px;
-            border: 1px solid var(--border);
-            background: #090c11;
-            color: white;
-            border-radius: 10px;
+            border-radius: 50%;
+
             cursor: pointer;
+
             font-size: 18px;
         }
 
-        /* =====================================================
+
+        /* =============================================
+           MOBILE MENU
+        ============================================== */
+
+        .mobile-menu {
+
+            display: none;
+
+            border-top:
+                1px solid var(--border);
+
+            background:
+                rgba(6,8,12,.98);
+        }
+
+
+        .mobile-menu.open {
+
+            display: block;
+        }
+
+
+        .mobile-menu a {
+
+            display: block;
+
+            padding:
+                14px 20px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            color: var(--soft);
+        }
+
+
+        /* =============================================
+           HERO
+        ============================================== */
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                130px 0 80px;
+
+            position: relative;
+        }
+
+
+        .hero-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.3fr .7fr;
+
+            gap:
+                50px;
+
+            align-items:
+                center;
+        }
+
+
+        .eyebrow {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap: 9px;
+
+            color:
+                var(--red2);
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 25px;
+            height: 2px;
+
+            background:
+                var(--red);
+        }
+
+
+        .hero-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(47px, 7vw, 88px);
+
+            line-height:
+                .98;
+
+            letter-spacing:
+                -2px;
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .hero-title span {
+
+            color:
+                var(--red2);
+        }
+
+
+        .hero-description {
+
+            max-width:
+                640px;
+
+            color:
+                var(--soft);
+
+            font-size:
+                16px;
+
+            line-height:
+                1.8;
+
+            margin-bottom:
+                28px;
+        }
+
+
+        .hero-buttons {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                11px;
+        }
+
+
+        .btn {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                13px 19px;
+
+            border-radius:
+                9px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                800;
+
+            transition:
+                var(--transition);
+
+            cursor:
+                pointer;
+        }
+
+
+        .btn-primary {
+
+            background:
+                var(--red);
+
+            color:
+                white;
+
+            border:
+                1px solid var(--red);
+        }
+
+
+        .btn-primary:hover {
+
+            background:
+                var(--red2);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .btn-secondary {
+
+            border:
+                1px solid var(--border2);
+
+            background:
+                rgba(255,255,255,.03);
+
+            color:
+                white;
+        }
+
+
+        .btn-secondary:hover {
+
+            background:
+                rgba(255,255,255,.07);
+        }
+
+
+        /* =============================================
+           HERO CARD
+        ============================================== */
+
+        .hero-card {
+
+            position:
+                relative;
+
+            min-height:
+                530px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                22px;
+
+            overflow:
+                hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151b25,
+                    #080a0e
+                );
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .hero-card::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(4,6,9,.95),
+                    rgba(4,6,9,.10) 60%,
+                    transparent
+                );
+        }
+
+
+        .hero-card img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            opacity:
+                .78;
+
+            transition:
+                .7s ease;
+        }
+
+
+        .hero-card:hover img {
+
+            transform:
+                scale(1.04);
+        }
+
+
+        .hero-card-info {
+
+            position:
+                absolute;
+
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+
+            z-index:
+                2;
+        }
+
+
+        .hero-card-label {
+
+            color:
+                var(--red2);
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                8px;
+        }
+
+
+        .hero-card-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                28px;
+
+            line-height:
+                1.1;
+        }
+
+
+        /* =============================================
+           SECTION
+        ============================================== */
+
+        section {
+
+            padding:
+                90px 0;
+        }
+
+
+        .section-top {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                end;
+
+            gap:
+                30px;
+
+            margin-bottom:
+                35px;
+        }
+
+
+        .section-label {
+
+            font-size:
+                10px;
+
+            color:
+                var(--red2);
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                8px;
+        }
+
+
+        .section-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(32px, 4vw, 48px);
+
+            line-height:
+                1.05;
+        }
+
+
+        .section-description {
+
+            max-width:
+                520px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+        }
+
+
+        /* =============================================
+           ABOUT
+        ============================================== */
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                50px;
+
+            align-items:
+                center;
+        }
+
+
+        .about-photo {
+
+            min-height:
+                510px;
+
+            border-radius:
+                20px;
+
+            overflow:
+                hidden;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171d27,
+                    #090b10
+                );
+        }
+
+
+        .about-photo img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            min-height:
+                510px;
+
+            object-fit:
+                cover;
+        }
+
+
+        .about-text p {
+
+            color:
+                var(--soft);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.9;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .stats {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                10px;
+
+            margin-top:
+                28px;
+        }
+
+
+        .stat {
+
+            padding:
+                20px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                12px;
+
+            background:
+                var(--surface);
+        }
+
+
+        .stat strong {
+
+            display:
+                block;
+
+            color:
+                var(--red2);
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                28px;
+
+            margin-bottom:
+                3px;
+        }
+
+
+        .stat span {
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                .8px;
+        }
+
+
+        /* =============================================
+           WORKS
+        ============================================== */
+
+        .works {
+
+            background:
+                var(--bg2);
+        }
+
+
+        .works-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                16px;
+        }
+
+
+        .work {
+
+            padding:
+                25px;
+
+            min-height:
+                250px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--surface),
+                    #090c11
+                );
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            transition:
+                var(--transition);
+        }
+
+
+        .work::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                130px;
+
+            height:
+                130px;
+
+            border-radius:
+                50%;
+
+            right:
+                -55px;
+
+            bottom:
+                -55px;
+
+            background:
+                rgba(223,31,50,.10);
+        }
+
+
+        .work:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(223,31,50,.3);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .work-number {
+
+            font-size:
+                11px;
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                50px;
+        }
+
+
+        .work-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                25px;
+
+            line-height:
+                1.1;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .work-text {
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+            max-width:
+                320px;
+        }
+
+
+        /* =============================================
+           VIDEO
+        ============================================== */
+
+        .video-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.4fr .8fr .8fr;
+
+            gap:
+                16px;
+        }
+
+
+        .video {
+
+            position:
+                relative;
+
+            min-height:
+                330px;
+
+            border-radius:
+                16px;
+
+            overflow:
+                hidden;
+
+            border:
+                1px solid var(--border);
+        }
+
+
+        .video-small {
+
+            min-height:
+                250px;
+        }
+
+
+        .video img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            transition:
+                .6s ease;
+        }
+
+
+        .video::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(4,6,9,.96),
+                    transparent 60%
+                );
+        }
+
+
+        .video:hover img {
+
+            transform:
+                scale(1.05);
+        }
+
+
+        .play {
+
+            position:
+                absolute;
+
+            z-index:
+                2;
+
+            top:
+                18px;
+
+            left:
+                18px;
+
+            width:
+                46px;
+
+            height:
+                46px;
+
+            border:
+                1px solid rgba(255,255,255,.2);
+
+            background:
+                rgba(0,0,0,.5);
+
+            backdrop-filter:
+                blur(8px);
+
+            border-radius:
+                50%;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+        }
+
+
+        .video-info {
+
+            position:
+                absolute;
+
+            z-index:
+                2;
+
+            left:
+                20px;
+
+            right:
+                20px;
+
+            bottom:
+                20px;
+        }
+
+
+        .video-info h3 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                23px;
+
+            line-height:
+                1.1;
+        }
+
+
+        /* =============================================
+           LOCATION / VISITOR
+        ============================================== */
+
+        .visitor-panel {
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(223,31,50,.10),
+                    var(--surface)
+                );
+
+            padding:
+                30px;
+        }
+
+
+        .visitor-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr auto;
+
+            gap:
+                25px;
+
+            align-items:
+                center;
+        }
+
+
+        .visitor-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                29px;
+
+            margin-bottom:
+                6px;
+        }
+
+
+        .visitor-text {
+
+            color:
+                var(--soft);
+
+            font-size:
+                12px;
+
+            max-width:
+                680px;
+        }
+
+
+        .location-result {
+
+            margin-top:
+                15px;
+
+            display:
+                none;
+
+            padding:
+                12px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                9px;
+
+            background:
+                rgba(0,0,0,.2);
+
+            color:
+                var(--soft);
+
+            font-size:
+                11px;
+        }
+
+
+        .location-result.show {
+
+            display:
+                block;
+        }
+
+
+        /* =============================================
+           CONTACT
+        ============================================== */
+
+        .contact {
+
+            background:
+                var(--bg2);
+        }
+
+
+        .contact-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap:
+                40px;
+        }
+
+
+        .contact-info {
+
+            padding:
+                30px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--surface);
+
+            border-radius:
+                18px;
+        }
+
+
+        .contact-item {
+
+            padding:
+                17px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .contact-item:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .contact-label {
+
+            display:
+                block;
+
+            color:
+                var(--red2);
+
+            font-size:
+                9px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .contact-value {
+
+            color:
+                var(--soft);
+
+            font-size:
+                13px;
+        }
+
+
+        .contact-form {
+
+            padding:
+                30px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+
+            background:
+                var(--surface);
+        }
+
+
+        .form-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                13px;
+        }
+
+
+        .field {
+
+            margin-bottom:
+                13px;
+        }
+
+
+        .field.full {
+
+            grid-column:
+                1 / -1;
+        }
+
+
+        .field label {
+
+            display:
+                block;
+
+            color:
+                var(--soft);
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                6px;
+        }
+
+
+        .field input,
+        .field textarea {
+
+            width:
+                100%;
+
+            border:
+                1px solid var(--border);
+
+            outline:
+                none;
+
+            border-radius:
+                8px;
+
+            background:
+                #090c11;
+
+            color:
+                white;
+
+            padding:
+                12px;
+
+            font-size:
+                12px;
+
+            transition:
+                var(--transition);
+        }
+
+
+        .field textarea {
+
+            min-height:
+                130px;
+
+            resize:
+                vertical;
+        }
+
+
+        .field input:focus,
+        .field textarea:focus {
+
+            border-color:
+                rgba(223,31,50,.6);
+
+            box-shadow:
+                0 0 0 3px rgba(223,31,50,.08);
+        }
+
+
+        .consent {
+
+            display:
+                flex;
+
+            gap:
+                9px;
+
+            align-items:
+                flex-start;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            line-height:
+                1.5;
+
+            margin:
+                10px 0 18px;
+        }
+
+
+        .consent input {
+
+            margin-top:
+                3px;
+        }
+
+
+        .form-message {
+
+            display:
+                none;
+
+            padding:
+                11px;
+
+            margin-top:
+                12px;
+
+            background:
+                rgba(86,200,130,.08);
+
+            border:
+                1px solid rgba(86,200,130,.2);
+
+            color:
+                #8ce0af;
+
+            border-radius:
+                8px;
+
+            font-size:
+                11px;
+        }
+
+
+        /* =============================================
+           FOOTER
+        ============================================== */
+
+        footer {
+
+            border-top:
+                1px solid var(--border);
+
+            background:
+                #040507;
+        }
+
+
+        .footer {
+
+            min-height:
+                100px;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                20px;
+        }
+
+
+        .footer-copy {
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+        }
+
+
+        .social {
+
+            display:
+                flex;
+
+            gap:
+                7px;
+        }
+
+
+        .social a {
+
+            width:
+                36px;
+
+            height:
+                36px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                50%;
+
+            color:
+                var(--soft);
+
+            font-size:
+                11px;
+
+            transition:
+                var(--transition);
+        }
+
+
+        .social a:hover {
+
+            color:
+                white;
+
+            border-color:
+                rgba(223,31,50,.5);
+
+            background:
+                rgba(223,31,50,.08);
+        }
+
+
+        /* =============================================
+           COOKIE / PRIVACY NOTICE
+        ============================================== */
+
+        .privacy-notice {
+
+            position:
+                fixed;
+
+            left:
+                18px;
+
+            right:
+                18px;
+
+            bottom:
+                18px;
+
+            z-index:
+                5000;
+
+            max-width:
+                750px;
+
+            margin:
+                auto;
+
+            padding:
+                18px;
+
+            border:
+                1px solid var(--border2);
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(10,13,18,.96);
+
+            backdrop-filter:
+                blur(14px);
+
+            box-shadow:
+                var(--shadow);
+
+            display:
+                none;
+        }
+
+
+        .privacy-notice.show {
+
+            display:
+                block;
+        }
+
+
+        .privacy-title {
+
+            font-weight:
+                800;
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .privacy-text {
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            line-height:
+                1.7;
+
+            margin-bottom:
+                13px;
+        }
+
+
+        .privacy-actions {
+
+            display:
+                flex;
+
+            gap:
+                8px;
+
+            flex-wrap:
+                wrap;
+        }
+
+
+        .privacy-actions button {
+
+            border:
+                none;
+
+            border-radius:
+                7px;
+
+            padding:
+                9px 13px;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            cursor:
+                pointer;
+        }
+
+
+        .privacy-ok {
+
+            background:
+                var(--red);
+
+            color:
+                white;
+        }
+
+
+        .privacy-close {
+
+            background:
+                rgba(255,255,255,.07);
+
+            color:
+                white;
+        }
+
+
+        /* =============================================
            RESPONSIVE
-        ===================================================== */
+        ============================================== */
 
-        @media (max-width: 1100px) {
+        @media (max-width: 980px) {
 
-            .desktop-nav {
-                display: none;
+            nav {
+                display:
+                    none;
             }
 
-            .menu-toggle {
-                display: grid;
+            .menu-btn {
+                display:
+                    grid;
+
+                place-items:
+                    center;
             }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .hero-side {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: none;
+            .hero-card {
+
+                min-height:
+                    450px;
             }
 
-            .content-layout {
-                grid-template-columns: 1fr;
-            }
+            .works-grid {
 
-            .side-panel {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
             }
 
             .video-grid {
-                grid-template-columns: 1fr 1fr;
+
+                grid-template-columns:
+                    1fr 1fr;
             }
 
-            .video-card.large {
-                grid-column: span 2;
-            }
+            .visitor-grid {
 
-            .profile-grid {
-                grid-template-columns: auto 1fr;
-            }
-
-            .profile-button {
-                grid-column: 2;
-                width: max-content;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr;
             }
         }
 
-        @media (max-width: 780px) {
+
+        @media (max-width: 650px) {
 
             .container {
-                width: min(var(--max), calc(100% - 24px));
+
+                width:
+                    calc(100% - 24px);
             }
 
-            .topbar-left {
-                display: none;
+            .nav {
+
+                min-height:
+                    72px;
             }
 
-            .topbar-inner {
-                justify-content: center;
+            .logo-title {
+
+                font-size:
+                    17px;
             }
 
-            .header-main {
-                min-height: 76px;
-            }
+            .logo-sub {
 
-            .brand-title {
-                font-size: 18px;
-            }
-
-            .brand-subtitle {
-                font-size: 8px;
-                letter-spacing: 2px;
-            }
-
-            .brand-mark {
-                width: 36px;
-                height: 36px;
-            }
-
-            .header-actions .search-btn {
-                display: none;
+                font-size:
+                    7px;
             }
 
             .hero {
-                padding-top: 20px;
-            }
 
-            .hero-main {
-                height: 430px;
-            }
+                min-height:
+                    auto;
 
-            .hero-content {
-                left: 20px;
-                right: 20px;
-                bottom: 22px;
+                padding:
+                    120px 0 60px;
             }
 
             .hero-title {
-                font-size: 34px;
+
+                font-size:
+                    48px;
+
+                letter-spacing:
+                    -1px;
             }
 
-            .hero-side {
-                grid-template-columns: 1fr;
+            .hero-description {
+
+                font-size:
+                    13px;
             }
 
-            .side-card {
-                min-height: 230px;
+            section {
+
+                padding:
+                    65px 0;
             }
 
-            .news-grid {
-                grid-template-columns: 1fr;
+            .section-top {
+
+                display:
+                    block;
             }
 
-            .news-image {
-                height: 230px;
+            .section-description {
+
+                margin-top:
+                    12px;
             }
 
-            .category-grid {
-                grid-template-columns: 1fr 1fr;
+            .about-photo,
+            .about-photo img {
+
+                min-height:
+                    350px;
             }
 
-            .list-card {
-                grid-template-columns: 1fr;
+            .stats {
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .list-image {
-                height: 210px;
-            }
-
-            .side-panel {
-                grid-template-columns: 1fr;
-            }
-
+            .works-grid,
             .video-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .video-card.large {
-                grid-column: span 1;
-                min-height: 300px;
+            .video,
+            .video-small {
+
+                min-height:
+                    280px;
             }
 
-            .profile-section {
-                padding: 25px;
+            .form-grid {
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .profile-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .field.full {
+
+                grid-column:
+                    auto;
             }
 
-            .profile-avatar {
-                margin: 0 auto;
+            .footer {
+
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                padding:
+                    25px 0;
+
+                text-align:
+                    center;
             }
 
-            .profile-button {
-                grid-column: auto;
-                margin: 0 auto;
+            .visitor-panel {
+
+                padding:
+                    22px;
             }
 
-            .newsletter-grid {
-                flex-direction: column;
-                align-items: stretch;
-            }
+            .contact-form,
+            .contact-info {
 
-            .newsletter-form {
-                min-width: 0;
-                width: 100%;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-bottom-inner {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .category-box {
-                min-height: 120px;
-            }
-
-            .newsletter-form {
-                display: grid;
-                gap: 10px;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                border-radius: 8px;
-                min-height: 46px;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-            }
-
-            .breaking-text {
-                font-size: 11px;
+                padding:
+                    22px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- ======================================================
-         TOP BAR
-    ======================================================= -->
 
-    <div class="topbar">
-        <div class="container topbar-inner">
-
-            <div class="topbar-left">
-                <span>31 Ağustos 2026 Pazartesi</span>
-                <span>•</span>
-                <span>Mersin</span>
-            </div>
-
-            <div class="topbar-right">
-                <span>Hakikatin peşinde.</span>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- ======================================================
+    <!-- =====================================================
          HEADER
-    ======================================================= -->
+    ====================================================== -->
 
     <header>
 
-        <div class="container header-main">
+        <div class="container nav">
 
-            <a href="#" class="brand">
+            <a href="#anasayfa" class="logo">
 
-                <div class="brand-mark">
+                <div class="logo-symbol">
                     <span>H</span>
                 </div>
 
-                <div class="brand-text">
-                    <div class="brand-title">
+                <div class="logo-text">
+
+                    <div class="logo-title">
                         HAKİKATİN İZİNDE
                     </div>
 
-                    <div class="brand-subtitle">
+                    <div class="logo-sub">
                         Gazeteci • Muhabir • İçerik Üreticisi
                     </div>
+
                 </div>
 
             </a>
 
 
-            <nav class="desktop-nav">
+            <nav>
 
-                <a href="#" class="active">Ana Sayfa</a>
-                <a href="#gundem">Gündem</a>
-                <a href="#mersin">Mersin</a>
-                <a href="#turkiye">Türkiye</a>
-                <a href="#dunya">Dünya</a>
-                <a href="#islam">İslam</a>
-                <a href="#video">Video</a>
-                <a href="#hakkimda">Hakkımda</a>
+                <a href="#anasayfa">
+                    Ana Sayfa
+                </a>
+
+                <a href="#hakkimda">
+                    Hakkımda
+                </a>
+
+                <a href="#calismalarim">
+                    Çalışmalarım
+                </a>
+
+                <a href="#videolar">
+                    Videolar
+                </a>
+
+                <a href="#iletisim" class="nav-contact">
+                    İletişim
+                </a>
 
             </nav>
 
 
-            <div class="header-actions">
-
-                <button class="icon-btn search-btn" onclick="openSearch()" aria-label="Ara">
-                    ⌕
-                </button>
-
-                <button class="icon-btn menu-toggle" onclick="toggleMenu()" aria-label="Menü">
-                    ☰
-                </button>
-
-            </div>
+            <button
+                class="menu-btn"
+                onclick="toggleMenu()"
+                aria-label="Menüyü aç"
+            >
+                ☰
+            </button>
 
         </div>
 
 
-        <div class="mobile-menu" id="mobileMenu">
+        <div id="mobileMenu" class="mobile-menu">
 
-            <a href="#" onclick="closeMenu()">Ana Sayfa</a>
-            <a href="#gundem" onclick="closeMenu()">Gündem</a>
-            <a href="#mersin" onclick="closeMenu()">Mersin</a>
-            <a href="#turkiye" onclick="closeMenu()">Türkiye</a>
-            <a href="#dunya" onclick="closeMenu()">Dünya</a>
-            <a href="#islam" onclick="closeMenu()">İslam</a>
-            <a href="#video" onclick="closeMenu()">Video</a>
-            <a href="#hakkimda" onclick="closeMenu()">Hakkımda</a>
+            <a href="#anasayfa" onclick="closeMenu()">
+                Ana Sayfa
+            </a>
+
+            <a href="#hakkimda" onclick="closeMenu()">
+                Hakkımda
+            </a>
+
+            <a href="#calismalarim" onclick="closeMenu()">
+                Çalışmalarım
+            </a>
+
+            <a href="#videolar" onclick="closeMenu()">
+                Videolar
+            </a>
+
+            <a href="#iletisim" onclick="closeMenu()">
+                İletişim
+            </a>
 
         </div>
 
     </header>
 
 
-    <!-- ======================================================
-         BREAKING
-    ======================================================= -->
-
-    <div class="breaking">
-
-        <div class="container breaking-inner">
-
-            <div class="breaking-label">
-                <span class="breaking-dot"></span>
-                Son Dakika
-            </div>
-
-            <div class="breaking-text">
-                Mersin, Türkiye ve dünyadan güncel gelişmeler Hakikatin İzinde'de...
-            </div>
-
-        </div>
-
-    </div>
-
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <main>
 
 
-        <!-- ==================================================
-             HERO
-        =================================================== -->
-
-        <section class="hero">
+        <section
+            id="anasayfa"
+            class="hero"
+        >
 
             <div class="container hero-grid">
 
 
-                <article class="hero-main">
+                <div>
+
+                    <div class="eyebrow">
+                        Gazeteci • Muhabir • İçerik Üreticisi
+                    </div>
+
+
+                    <h1 class="hero-title">
+
+                        Hakikatin
+                        <span>İzinde.</span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Sahadan haberler, röportajlar, video çalışmaları,
+                        fotoğraflar ve kişisel projeler...
+                        Gerçeğin peşinden giden bir gazetecilik yolculuğu.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#calismalarim"
+                            class="btn btn-primary"
+                        >
+                            Çalışmalarımı Gör →
+                        </a>
+
+
+                        <a
+                            href="#hakkimda"
+                            class="btn btn-secondary"
+                        >
+                            Hakkımda
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+
+                    <!--
+                        BURAYA KENDİ FOTOĞRAFINI KOYABİLİRSİN.
+                        Şimdilik örnek görsel var.
+                    -->
 
                     <img
-                        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1600&q=85"
-                        alt="Haber"
+                        src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=85"
+                        alt="Gazetecilik"
                     >
 
-                    <div class="hero-content">
 
-                        <div class="category">
-                            Gündem
+                    <div class="hero-card-info">
+
+                        <div class="hero-card-label">
+                            HAKİKATİN İZİNDE
                         </div>
 
-                        <h1 class="hero-title">
-                            Hakikatin peşinde, haberin merkezinde: Yeni bir gazetecilik yolculuğu
-                        </h1>
-
-                        <p class="hero-description">
-                            Gündemin sıcak başlıkları, sahadan özel haberler,
-                            röportajlar, analizler ve gerçek hikâyeler...
-                        </p>
-
-                        <div class="meta">
-                            <span>31 Ağustos 2026</span>
-                            <span>•</span>
-                            <span>5 dk okuma</span>
+                        <div class="hero-card-title">
+                            Haber sadece yazılmaz;
+                            sahada yaşanır.
                         </div>
 
                     </div>
 
-                </article>
-
-
-                <div class="hero-side">
-
-
-                    <article class="side-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1000&q=85"
-                            alt="Gazetecilik"
-                        >
-
-                        <div class="side-content">
-
-                            <div class="category">
-                                Türkiye
-                            </div>
-
-                            <h2 class="side-title">
-                                Türkiye gündeminden öne çıkan başlıklar
-                            </h2>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="side-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=85"
-                            alt="Dünya"
-                        >
-
-                        <div class="side-content">
-
-                            <div class="category">
-                                Dünya
-                            </div>
-
-                            <h2 class="side-title">
-                                Dünyada yaşanan gelişmeler ve dikkat çeken olaylar
-                            </h2>
-
-                        </div>
-
-                    </article>
-
-
                 </div>
+
 
             </div>
 
         </section>
 
 
-        <!-- ==================================================
-             GÜNDEM
-        =================================================== -->
+        <!-- =====================================================
+             HAKKIMDA
+        ====================================================== -->
 
-        <section class="section" id="gundem">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-heading-left">
-
-                        <div class="section-line"></div>
-
-                        <h2 class="section-title">
-                            Gündemden
-                        </h2>
-
-                    </div>
-
-                    <a href="#" class="section-link">
-                        Tüm Haberler →
-                    </a>
-
-                </div>
-
-
-                <div class="news-grid">
-
-
-                    <article class="news-card">
-
-                        <div class="news-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=1000&q=80"
-                                alt="Teknoloji"
-                            >
-
-                            <span class="news-tag">
-                                Teknoloji
-                            </span>
-
-                        </div>
-
-                        <div class="news-body">
-
-                            <h3 class="news-title">
-                                Yapay zekâ gazeteciliği ve içerik üretimini nasıl değiştiriyor?
-                            </h3>
-
-                            <p class="news-summary">
-                                Teknolojinin haber üretimi üzerindeki etkisi
-                                her geçen gün daha fazla hissediliyor.
-                            </p>
-
-                            <div class="meta">
-                                31 Ağustos 2026 • 4 dk
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="news-card">
-
-                        <div class="news-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80"
-                                alt="Ofis"
-                            >
-
-                            <span class="news-tag">
-                                Ekonomi
-                            </span>
-
-                        </div>
-
-                        <div class="news-body">
-
-                            <h3 class="news-title">
-                                Ekonomide vatandaşın gündeminde hangi başlıklar var?
-                            </h3>
-
-                            <p class="news-summary">
-                                Piyasalardaki hareketlilik vatandaşın günlük
-                                hayatındaki etkileriyle değerlendiriliyor.
-                            </p>
-
-                            <div class="meta">
-                                31 Ağustos 2026 • 3 dk
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="news-card">
-
-                        <div class="news-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80"
-                                alt="Etkinlik"
-                            >
-
-                            <span class="news-tag">
-                                Yaşam
-                            </span>
-
-                        </div>
-
-                        <div class="news-body">
-
-                            <h3 class="news-title">
-                                Şehir hayatında değişen alışkanlıklar ve yeni yaşam biçimleri
-                            </h3>
-
-                            <p class="news-summary">
-                                İnsanların şehir yaşamına bakışı son yıllarda
-                                önemli ölçüde değişiyor.
-                            </p>
-
-                            <div class="meta">
-                                30 Ağustos 2026 • 5 dk
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             MERSİN
-        =================================================== -->
-
-        <section class="section" id="mersin">
+        <section id="hakkimda">
 
             <div class="container">
 
-                <div class="section-heading">
 
-                    <div class="section-heading-left">
-
-                        <div class="section-line"></div>
-
-                        <h2 class="section-title">
-                            Mersin
-                        </h2>
-
-                    </div>
-
-                    <a href="#" class="section-link">
-                        Mersin Haberleri →
-                    </a>
-
-                </div>
-
-
-                <div class="mersin-feature">
-
-                    <div class="mersin-content">
-
-                        <div class="eyebrow">
-                            Şehrin nabzı
-                        </div>
-
-                        <h2 class="mersin-title">
-                            Mersin'den dünyaya uzanan haberler
-                        </h2>
-
-                        <p class="mersin-text">
-                            Mersin'in sokaklarından, kurumlarından, insanlarından
-                            ve gündeminden haberler. Sahadan doğrudan,
-                            anlaşılır ve güçlü gazetecilik.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             TÜRKİYE + SIDEBAR
-        =================================================== -->
-
-        <section class="section" id="turkiye">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-heading-left">
-
-                        <div class="section-line"></div>
-
-                        <h2 class="section-title">
-                            Türkiye Gündemi
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="content-layout">
-
+                <div class="section-top">
 
                     <div>
 
+                        <div class="section-label">
+                            Ben kimim?
+                        </div>
 
-                        <article class="list-card">
+                        <h2 class="section-title">
+                            Hakkımda
+                        </h2>
 
-                            <div class="list-image">
+                    </div>
 
-                                <img
-                                    src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1000&q=80"
-                                    alt="Meclis"
-                                >
+                    <p class="section-description">
 
-                            </div>
+                        Gazetecilik, saha çalışmaları, röportajlar,
+                        video ve yeni nesil içerik üretimi.
 
-                            <div class="list-body">
+                    </p>
 
-                                <div class="category">
-                                    Gündem
-                                </div>
-
-                                <h3 class="list-title">
-                                    Türkiye'nin gündeminde öne çıkan gelişmeler
-                                </h3>
-
-                                <p class="list-summary">
-                                    Gün içerisinde yaşanan önemli gelişmeleri
-                                    tek dosyada takip edin.
-                                </p>
-
-                                <div class="meta">
-                                    31 Ağustos 2026 • Gündem
-                                </div>
-
-                            </div>
-
-                        </article>
+                </div>
 
 
-                        <article class="list-card">
-
-                            <div class="list-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1509099836639-18ba02c7a0d8?auto=format&fit=crop&w=1000&q=80"
-                                    alt="İnsanlar"
-                                >
-
-                            </div>
-
-                            <div class="list-body">
-
-                                <div class="category">
-                                    Toplum
-                                </div>
-
-                                <h3 class="list-title">
-                                    Sokaktan yükselen ses: Vatandaş ne düşünüyor?
-                                </h3>
-
-                                <p class="list-summary">
-                                    Röportajlar ve saha izlenimleriyle toplumun
-                                    gündemini doğrudan vatandaşın ağzından aktarıyoruz.
-                                </p>
-
-                                <div class="meta">
-                                    30 Ağustos 2026 • Röportaj
-                                </div>
-
-                            </div>
-
-                        </article>
+                <div class="about-grid">
 
 
-                        <article class="list-card">
+                    <div class="about-photo">
 
-                            <div class="list-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&w=1000&q=80"
-                                    alt="Gazete"
-                                >
-
-                            </div>
-
-                            <div class="list-body">
-
-                                <div class="category">
-                                    Analiz
-                                </div>
-
-                                <h3 class="list-title">
-                                    Gündemin perde arkasındaki ayrıntılar
-                                </h3>
-
-                                <p class="list-summary">
-                                    Sadece haberi değil, olayların arka planını
-                                    anlamaya yönelik değerlendirmeler.
-                                </p>
-
-                                <div class="meta">
-                                    29 Ağustos 2026 • Analiz
-                                </div>
-
-                            </div>
-
-                        </article>
-
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85"
+                            alt="Profil"
+                        >
 
                     </div>
 
 
-                    <aside class="side-panel">
+                    <div class="about-text">
+
+                        <p>
+
+                            Ben Emre Ekinci.
+
+                            Gazetecilik ve içerik üretimi alanında;
+                            haber, röportaj, fotoğraf, video ve dijital
+                            medya çalışmalarına odaklanıyorum.
+
+                        </p>
 
 
-                        <div class="widget">
+                        <p>
 
-                            <div class="widget-head">
+                            Benim için gazetecilik yalnızca bir bilgiyi
+                            aktarmaktan ibaret değil. Olayın merkezine
+                            gitmek, insanları dinlemek, doğru soruları
+                            sormak ve gerçeğin izini sürmek.
 
-                                <div class="widget-title">
-                                    Döviz Kurları
-                                </div>
+                        </p>
+
+
+                        <p>
+
+                            “Hakikatin İzinde” fikri de tam olarak
+                            buradan doğuyor.
+
+                        </p>
+
+
+                        <div class="stats">
+
+
+                            <div class="stat">
+
+                                <strong>
+                                    01
+                                </strong>
 
                                 <span>
-                                    Piyasa
+                                    Gazetecilik
                                 </span>
 
                             </div>
 
-                            <div class="widget-body">
 
+                            <div class="stat">
 
-                                <div class="currency-row">
-
-                                    <div class="currency-name">
-                                        USD / TL
-                                    </div>
-
-                                    <div class="currency-value">
-                                        00,00
-                                        <span class="up">▲</span>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="currency-row">
-
-                                    <div class="currency-name">
-                                        EUR / TL
-                                    </div>
-
-                                    <div class="currency-value">
-                                        00,00
-                                        <span class="up">▲</span>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="currency-row">
-
-                                    <div class="currency-name">
-                                        GBP / TL
-                                    </div>
-
-                                    <div class="currency-value">
-                                        00,00
-                                        <span class="up">▲</span>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="currency-row">
-
-                                    <div class="currency-name">
-                                        Gram Altın
-                                    </div>
-
-                                    <div class="currency-value">
-                                        00,00
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="widget">
-
-                            <div class="widget-head">
-
-                                <div class="widget-title">
-                                    Nöbetçi Eczaneler
-                                </div>
+                                <strong>
+                                    02
+                                </strong>
 
                                 <span>
-                                    Mersin
+                                    İçerik
                                 </span>
 
                             </div>
 
-                            <div class="widget-body">
 
+                            <div class="stat">
 
-                                <div class="pharmacy">
+                                <strong>
+                                    03
+                                </strong>
 
-                                    <strong>
-                                        Örnek Eczanesi
-                                    </strong>
-
-                                    <span>
-                                        Yenişehir • Merkez
-                                    </span>
-
-                                    <div class="pharmacy-badge">
-                                        NÖBETÇİ
-                                    </div>
-
-                                </div>
-
-
-                                <div class="pharmacy">
-
-                                    <strong>
-                                        Merkez Eczanesi
-                                    </strong>
-
-                                    <span>
-                                        Mezitli • Merkez
-                                    </span>
-
-                                    <div class="pharmacy-badge">
-                                        NÖBETÇİ
-                                    </div>
-
-                                </div>
-
-
-                                <div class="pharmacy">
-
-                                    <strong>
-                                        Şehir Eczanesi
-                                    </strong>
-
-                                    <span>
-                                        Akdeniz • Merkez
-                                    </span>
-
-                                    <div class="pharmacy-badge">
-                                        NÖBETÇİ
-                                    </div>
-
-                                </div>
-
+                                <span>
+                                    Dijital
+                                </span>
 
                             </div>
 
+
                         </div>
 
+                    </div>
 
-                    </aside>
 
                 </div>
 
@@ -2093,80 +2396,154 @@
         </section>
 
 
-        <!-- ==================================================
-             CATEGORY
-        =================================================== -->
+        <!-- =====================================================
+             ÇALIŞMALAR
+        ====================================================== -->
 
-        <section class="section" id="dunya">
+        <section
+            id="calismalarim"
+            class="works"
+        >
 
             <div class="container">
 
-                <div class="section-heading">
 
-                    <div class="section-heading-left">
+                <div class="section-top">
 
-                        <div class="section-line"></div>
+                    <div>
+
+                        <div class="section-label">
+                            Ürettiklerim
+                        </div>
 
                         <h2 class="section-title">
-                            Keşfet
+                            Çalışmalarım
                         </h2>
 
                     </div>
 
+                    <p class="section-description">
+
+                        Farklı alanlarda hazırladığım çalışmalar,
+                        projeler ve içerikler.
+
+                    </p>
+
                 </div>
 
 
-                <div class="category-grid">
+                <div class="works-grid">
 
 
-                    <a href="#" class="category-box">
+                    <a href="#" class="work">
 
-                        <div class="category-number">
-                            01
+                        <div class="work-number">
+                            01 / GAZETECİLİK
                         </div>
 
-                        <div class="category-name">
-                            Türkiye
-                        </div>
+                        <h3 class="work-title">
+                            Haber & Röportaj
+                        </h3>
+
+                        <p class="work-text">
+                            Sahadan haberler, özel röportajlar,
+                            insan hikâyeleri ve gündeme ilişkin
+                            çalışmalar.
+                        </p>
 
                     </a>
 
 
-                    <a href="#" class="category-box">
+                    <a href="#" class="work">
 
-                        <div class="category-number">
-                            02
+                        <div class="work-number">
+                            02 / VİDEO
                         </div>
 
-                        <div class="category-name">
-                            Dünya
-                        </div>
+                        <h3 class="work-title">
+                            Video İçerikler
+                        </h3>
+
+                        <p class="work-text">
+                            Kısa videolar, belgesel çalışmalar,
+                            sosyal medya içerikleri ve özel
+                            video projeleri.
+                        </p>
 
                     </a>
 
 
-                    <a href="#" class="category-box" id="islam">
+                    <a href="#" class="work">
 
-                        <div class="category-number">
-                            03
+                        <div class="work-number">
+                            03 / YAPAY ZEKÂ
                         </div>
 
-                        <div class="category-name">
-                            İslam
-                        </div>
+                        <h3 class="work-title">
+                            Yapay Zekâ & Medya
+                        </h3>
+
+                        <p class="work-text">
+                            Yapay zekâ destekli içerik üretimi,
+                            görsel çalışmalar ve deneysel
+                            dijital projeler.
+                        </p>
 
                     </a>
 
 
-                    <a href="#" class="category-box">
+                    <a href="#" class="work">
 
-                        <div class="category-number">
-                            04
+                        <div class="work-number">
+                            04 / FOTOĞRAF
                         </div>
 
-                        <div class="category-name">
-                            Yapay Zekâ
+                        <h3 class="work-title">
+                            Fotoğraf
+                        </h3>
+
+                        <p class="work-text">
+                            Sahadan kareler, şehir yaşamı,
+                            etkinlikler ve kişisel fotoğraf
+                            arşivi.
+                        </p>
+
+                    </a>
+
+
+                    <a href="#" class="work">
+
+                        <div class="work-number">
+                            05 / PROJE
                         </div>
+
+                        <h3 class="work-title">
+                            Özel Projeler
+                        </h3>
+
+                        <p class="work-text">
+                            Animasyon filmleri, araştırma dosyaları
+                            ve uzun soluklu kişisel çalışmalar.
+                        </p>
+
+                    </a>
+
+
+                    <a href="#" class="work">
+
+                        <div class="work-number">
+                            06 / DİJİTAL
+                        </div>
+
+                        <h3 class="work-title">
+                            Dijital Medya
+                        </h3>
+
+                        <p class="work-text">
+                            Web tasarımı, sosyal medya,
+                            dijital yayıncılık ve yeni medya
+                            projeleri.
+                        </p>
 
                     </a>
 
@@ -2178,29 +2555,35 @@
         </section>
 
 
-        <!-- ==================================================
-             VIDEO
-        =================================================== -->
+        <!-- =====================================================
+             VİDEOLAR
+        ====================================================== -->
 
-        <section class="section" id="video">
+        <section id="videolar">
 
             <div class="container">
 
-                <div class="section-heading">
 
-                    <div class="section-heading-left">
+                <div class="section-top">
 
-                        <div class="section-line"></div>
+                    <div>
+
+                        <div class="section-label">
+                            Görsel içerikler
+                        </div>
 
                         <h2 class="section-title">
-                            Video
+                            Videolar
                         </h2>
 
                     </div>
 
-                    <a href="#" class="section-link">
-                        Tüm Videolar →
-                    </a>
+                    <p class="section-description">
+
+                        Haber, saha, röportaj ve özel video
+                        çalışmalarından seçmeler.
+
+                    </p>
 
                 </div>
 
@@ -2208,10 +2591,10 @@
                 <div class="video-grid">
 
 
-                    <article class="video-card large">
+                    <a href="#" class="video">
 
                         <img
-                            src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=85"
+                            src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1400&q=85"
                             alt="Video"
                         >
 
@@ -2219,22 +2602,18 @@
                             ▶
                         </div>
 
-                        <div class="video-content">
+                        <div class="video-info">
 
-                            <div class="category">
-                                Özel Video
-                            </div>
-
-                            <h3 class="video-title">
-                                Sokaktan hayata: İnsanların hikâyeleri
+                            <h3>
+                                Sahadan İnsan Hikâyeleri
                             </h3>
 
                         </div>
 
-                    </article>
+                    </a>
 
 
-                    <article class="video-card">
+                    <a href="#" class="video video-small">
 
                         <img
                             src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=85"
@@ -2245,21 +2624,21 @@
                             ▶
                         </div>
 
-                        <div class="video-content">
+                        <div class="video-info">
 
-                            <h3 class="video-title">
-                                Gündeme dair değerlendirme
+                            <h3>
+                                Röportajlar
                             </h3>
 
                         </div>
 
-                    </article>
+                    </a>
 
 
-                    <article class="video-card">
+                    <a href="#" class="video video-small">
 
                         <img
-                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1000&q=85"
                             alt="Video"
                         >
 
@@ -2267,15 +2646,15 @@
                             ▶
                         </div>
 
-                        <div class="video-content">
+                        <div class="video-info">
 
-                            <h3 class="video-title">
-                                Mersin'den özel görüntüler
+                            <h3>
+                                Özel Çalışmalar
                             </h3>
 
                         </div>
 
-                    </article>
+                    </a>
 
 
                 </div>
@@ -2285,90 +2664,302 @@
         </section>
 
 
-        <!-- ==================================================
-             HAKKIMDA
-        =================================================== -->
+        <!-- =====================================================
+             ZİYARETÇİ / KONUM
+        ====================================================== -->
 
-        <section class="section" id="hakkimda">
+        <section>
 
             <div class="container">
 
-                <div class="profile-section">
 
-                    <div class="profile-grid">
+                <div class="visitor-panel">
 
 
-                        <div class="profile-avatar">
-
-                            <div>
-                                EE
-                            </div>
-
-                        </div>
+                    <div class="visitor-grid">
 
 
                         <div>
 
-                            <div class="profile-role">
-                                Gazeteci • Muhabir • İçerik Üreticisi
+                            <div class="section-label">
+                                Ziyaretçi deneyimi
                             </div>
 
-                            <h2 class="profile-title">
-                                Hakikatin İzinde
+                            <h2 class="visitor-title">
+                                Sana daha uygun içerikler gösterebilirim.
                             </h2>
 
-                            <p class="profile-text">
-                                Sahadan haberler, röportajlar, video içerikleri,
-                                araştırmalar ve kişisel projeler...
-                                Amacımız gündemi sadece aktarmak değil;
-                                anlamak, sorgulamak ve gerçeğin izini sürmek.
+                            <p class="visitor-text">
+
+                                Konum paylaşımına izin verirsen
+                                bulunduğun konumu tarayıcının sağladığı
+                                bilgiler üzerinden kullanarak yerel
+                                içerikleri öne çıkarabilirim.
+
+                                Konum paylaşımı tamamen isteğe bağlıdır.
+
                             </p>
+
+
+                            <div
+                                id="locationResult"
+                                class="location-result"
+                            ></div>
 
                         </div>
 
 
-                        <a href="#" class="profile-button">
-                            Hakkımda →
-                        </a>
+                        <button
+                            class="btn btn-primary"
+                            onclick="getLocation()"
+                        >
+                            Konumumu Paylaş
+                        </button>
 
 
                     </div>
 
                 </div>
 
+            </div>
 
-                <div class="newsletter">
+        </section>
 
-                    <div class="newsletter-grid">
 
-                        <div>
+        <!-- =====================================================
+             İLETİŞİM
+        ====================================================== -->
 
-                            <h3 class="newsletter-title">
-                                Gündemi kaçırma.
-                            </h3>
+        <section
+            id="iletisim"
+            class="contact"
+        >
 
-                            <p class="newsletter-text">
-                                Önemli gelişmeler ve özel içerikler için takipte kal.
-                            </p>
+            <div class="container">
+
+
+                <div class="section-top">
+
+                    <div>
+
+                        <div class="section-label">
+                            Bana ulaş
+                        </div>
+
+                        <h2 class="section-title">
+                            İletişim
+                        </h2>
+
+                    </div>
+
+                    <p class="section-description">
+
+                        Haber, röportaj, iş birliği veya içerik
+                        önerileri için benimle iletişime geçebilirsin.
+
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-info">
+
+
+                        <div class="contact-item">
+
+                            <span class="contact-label">
+                                E-posta
+                            </span>
+
+                            <span class="contact-value">
+                                mail@ornek.com
+                            </span>
 
                         </div>
 
 
-                        <form class="newsletter-form" onsubmit="subscribe(event)">
+                        <div class="contact-item">
 
-                            <input
-                                type="email"
-                                placeholder="E-posta adresiniz"
-                                required
+                            <span class="contact-label">
+                                WhatsApp
+                            </span>
+
+                            <span class="contact-value">
+                                +90 5XX XXX XX XX
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <span class="contact-label">
+                                Konum
+                            </span>
+
+                            <span class="contact-value">
+                                Mersin / Türkiye
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <span class="contact-label">
+                                Sosyal medya
+                            </span>
+
+                            <span class="contact-value">
+                                @Ekinci571
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-form">
+
+
+                        <!--
+                            ÖNEMLİ:
+
+                            Burası şimdilik görsel/form altyapısıdır.
+
+                            Gerçekten sana e-posta veya kayıt olarak
+                            gelmesi için bir form endpoint'i
+                            bağlayacağız.
+
+                            Örneğin Formspree gibi bir servis
+                            kullanılabilir.
+
+                            Endpoint'i aşağıdaki form action bölümüne
+                            koyacağız.
+                        -->
+
+
+                        <form
+                            id="contactForm"
+                            action=""
+                            method="POST"
+                        >
+
+
+                            <div class="form-grid">
+
+
+                                <div class="field">
+
+                                    <label for="name">
+                                        Ad Soyad
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Adınız ve soyadınız"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="phone">
+                                        Telefon
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="05XX XXX XX XX"
+                                    >
+
+                                </div>
+
+
+                                <div class="field full">
+
+                                    <label for="email">
+                                        E-posta
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="ornek@mail.com"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="field full">
+
+                                    <label for="message">
+                                        Mesaj
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        placeholder="Mesajınızı yazın..."
+                                        required
+                                    ></textarea>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <label class="consent">
+
+                                <input
+                                    type="checkbox"
+                                    id="consent"
+                                    required
+                                >
+
+                                <span>
+
+                                    İletişim bilgilerimi iletişim amacıyla
+                                    paylaşmayı kabul ediyorum.
+
+                                </span>
+
+                            </label>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
                             >
-
-                            <button type="submit">
-                                Katıl
+                                Mesaj Gönder
                             </button>
+
+
+                            <div
+                                id="formMessage"
+                                class="form-message"
+                            >
+                                Mesajınız gönderim için hazırlandı.
+                            </div>
+
 
                         </form>
 
                     </div>
+
 
                 </div>
 
@@ -2380,163 +2971,132 @@
     </main>
 
 
-    <!-- ======================================================
+    <!-- =====================================================
          FOOTER
-    ======================================================= -->
+    ====================================================== -->
 
     <footer>
 
-        <div class="container footer-main">
+        <div class="container footer">
 
 
-            <div class="footer-brand">
+            <div class="footer-copy">
 
-                <a href="#" class="brand">
+                © 2026 Hakikatin İzinde.
+                Tüm hakları saklıdır.
 
-                    <div class="brand-mark">
-                        <span>H</span>
-                    </div>
+            </div>
 
-                    <div class="brand-text">
 
-                        <div class="brand-title">
-                            HAKİKATİN İZİNDE
-                        </div>
+            <div class="social">
 
-                        <div class="brand-subtitle">
-                            Gazeteci • Muhabir • İçerik Üreticisi
-                        </div>
 
-                    </div>
-
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                    title="Instagram"
+                >
+                    IG
                 </a>
 
 
-                <p class="footer-text">
-                    Haber, gazetecilik, video ve kişisel projeler.
-                    Gerçeğin izini sürmek için çıktığımız yolculuk.
-                </p>
+                <a
+                    href="#"
+                    aria-label="YouTube"
+                    title="YouTube"
+                >
+                    YT
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="X"
+                    title="X"
+                >
+                    X
+                </a>
+
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                    title="Facebook"
+                >
+                    FB
+                </a>
+
 
             </div>
 
-
-            <div>
-
-                <div class="footer-heading">
-                    Keşfet
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#gundem">Gündem</a>
-                    <a href="#mersin">Mersin</a>
-                    <a href="#turkiye">Türkiye</a>
-                    <a href="#dunya">Dünya</a>
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-heading">
-                    İçerikler
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#islam">İslam</a>
-                    <a href="#">Yapay Zekâ</a>
-                    <a href="#video">Videolar</a>
-                    <a href="#">Fotoğraflar</a>
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-heading">
-                    Site
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#hakkimda">Hakkımda</a>
-                    <a href="#">İletişim</a>
-                    <a href="#">Gizlilik</a>
-                    <a href="#">Çerez Politikası</a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <div class="container footer-bottom-inner">
-
-                <div>
-                    © 2026 Hakikatin İzinde. Tüm hakları saklıdır.
-                </div>
-
-                <div>
-                    Gazeteci • Muhabir • İçerik Üreticisi
-                </div>
-
-            </div>
 
         </div>
 
     </footer>
 
 
-    <!-- ======================================================
-         SEARCH
-    ======================================================= -->
+    <!-- =====================================================
+         GİZLİLİK / İZİN BİLDİRİMİ
+    ====================================================== -->
 
-    <div class="search-overlay" id="searchOverlay">
+    <div
+        id="privacyNotice"
+        class="privacy-notice"
+    >
 
-        <div class="search-box">
+        <div class="privacy-title">
+            Gizlilik ve ziyaretçi deneyimi
+        </div>
 
-            <div class="search-input-wrap">
 
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Haber, konu veya kategori ara..."
-                    onkeydown="searchKey(event)"
-                >
+        <div class="privacy-text">
 
-                <button
-                    class="close-search"
-                    onclick="closeSearch()"
-                    aria-label="Kapat"
-                >
-                    ×
-                </button>
+            Bu sitede ziyaret deneyimini geliştirmek amacıyla
+            analitik araçları kullanılabilir. Konum bilgisi yalnızca
+            tarayıcınız üzerinden açıkça izin vermeniz halinde alınır.
+            Telefon ve iletişim bilgileri ise yalnızca sizin form
+            üzerinden paylaşmanız halinde alınır.
 
-            </div>
+        </div>
+
+
+        <div class="privacy-actions">
+
+            <button
+                class="privacy-ok"
+                onclick="acceptPrivacy()"
+            >
+                Kabul Et
+            </button>
+
+
+            <button
+                class="privacy-close"
+                onclick="closePrivacy()"
+            >
+                Kapat
+            </button>
 
         </div>
 
     </div>
 
 
-    <!-- ======================================================
+    <!-- =====================================================
          JAVASCRIPT
-    ======================================================= -->
+    ====================================================== -->
 
     <script>
 
+
+        /* ===========================================
+           MOBİL MENÜ
+        ============================================ */
+
         function toggleMenu() {
 
-            const menu = document.getElementById("mobileMenu");
+            const menu =
+                document.getElementById("mobileMenu");
 
             menu.classList.toggle("open");
 
@@ -2545,115 +3105,271 @@
 
         function closeMenu() {
 
-            const menu = document.getElementById("mobileMenu");
+            const menu =
+                document.getElementById("mobileMenu");
 
             menu.classList.remove("open");
 
         }
 
 
-        function openSearch() {
+        /* ===========================================
+           KONUM
+        ============================================ */
 
-            const overlay = document.getElementById("searchOverlay");
+        function getLocation() {
 
-            overlay.classList.add("open");
-
-            setTimeout(() => {
-
-                document.getElementById("searchInput").focus();
-
-            }, 100);
-
-        }
+            const result =
+                document.getElementById(
+                    "locationResult"
+                );
 
 
-        function closeSearch() {
-
-            const overlay = document.getElementById("searchOverlay");
-
-            overlay.classList.remove("open");
-
-        }
+            result.classList.add("show");
 
 
-        function searchKey(event) {
+            if (!navigator.geolocation) {
 
-            if (event.key === "Escape") {
+                result.innerText =
+                    "Tarayıcınız konum özelliğini desteklemiyor.";
 
-                closeSearch();
-
+                return;
             }
 
-            if (event.key === "Enter") {
 
-                const value = document
-                    .getElementById("searchInput")
-                    .value
-                    .trim();
+            result.innerText =
+                "Konum izni bekleniyor...";
 
-                if (value !== "") {
 
-                    alert(
-                        '"' +
-                        value +
-                        '" için arama sistemi sonraki aşamada aktif edilecek.'
+            navigator.geolocation.getCurrentPosition(
+
+                function(position) {
+
+                    const latitude =
+                        position.coords.latitude;
+
+                    const longitude =
+                        position.coords.longitude;
+
+
+                    result.innerHTML =
+
+                        "Konum izni verildi. " +
+
+                        "<br>Enlem: " +
+                        latitude.toFixed(5) +
+
+                        "<br>Boylam: " +
+                        longitude.toFixed(5);
+
+                },
+
+
+                function(error) {
+
+                    if (error.code === 1) {
+
+                        result.innerText =
+                            "Konum paylaşımına izin verilmedi.";
+
+                    } else if (error.code === 2) {
+
+                        result.innerText =
+                            "Konum bilgisi alınamadı.";
+
+                    } else if (error.code === 3) {
+
+                        result.innerText =
+                            "Konum isteğinin süresi doldu.";
+
+                    } else {
+
+                        result.innerText =
+                            "Konum alınırken bir hata oluştu.";
+
+                    }
+
+                },
+
+                {
+
+                    enableHighAccuracy: false,
+
+                    timeout: 10000,
+
+                    maximumAge: 300000
+
+                }
+
+            );
+
+        }
+
+
+        /* ===========================================
+           GİZLİLİK BİLDİRİMİ
+        ============================================ */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                const privacyAccepted =
+                    localStorage.getItem(
+                        "hakikatinPrivacyAccepted"
+                    );
+
+
+                if (!privacyAccepted) {
+
+                    setTimeout(
+                        function() {
+
+                            document
+                                .getElementById(
+                                    "privacyNotice"
+                                )
+                                .classList.add("show");
+
+                        },
+                        1200
                     );
 
                 }
 
             }
+        );
+
+
+        function acceptPrivacy() {
+
+            localStorage.setItem(
+                "hakikatinPrivacyAccepted",
+                "true"
+            );
+
+
+            document
+                .getElementById("privacyNotice")
+                .classList.remove("show");
 
         }
 
 
-        function subscribe(event) {
+        function closePrivacy() {
 
-            event.preventDefault();
-
-            const email =
-                event.target
-                    .querySelector("input")
-                    .value;
-
-            if (email) {
-
-                alert(
-                    "Teşekkürler! " +
-                    email +
-                    " adresi kayıt için hazır."
-                );
-
-                event.target.reset();
-
-            }
+            document
+                .getElementById("privacyNotice")
+                .classList.remove("show");
 
         }
+
+
+        /* ===========================================
+           İLETİŞİM FORMU
+        ============================================ */
+
+        document
+            .getElementById("contactForm")
+            .addEventListener(
+                "submit",
+                function(event) {
+
+                    const form =
+                        document.getElementById(
+                            "contactForm"
+                        );
+
+                    const message =
+                        document.getElementById(
+                            "formMessage"
+                        );
+
+
+                    /*
+                        Henüz gerçek endpoint bağlanmadığı için
+                        formun sayfayı boş yere yenilemesini
+                        engelliyoruz.
+                    */
+
+                    if (
+                        form.action ===
+                        window.location.href ||
+                        form.action === ""
+                    ) {
+
+                        event.preventDefault();
+
+
+                        message.style.display =
+                            "block";
+
+                        message.innerText =
+                            "Form arayüzü hazır. Bir sonraki aşamada bunu gerçek e-posta / kayıt sistemine bağlayacağız.";
+
+                    }
+
+                }
+            );
+
+
+        /* ===========================================
+           SAYFA GÖRÜNÜM ANİMASYONU
+        ============================================ */
+
+        const observer =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.style.opacity = "1";
+
+                                entry.target.style.transform = "translateY(0)";
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: .08
+                }
+
+            );
 
 
         document
-            .getElementById("searchOverlay")
-            .addEventListener("click", function(event) {
+            .querySelectorAll(
+                "section .section-title, .work, .video, .about-photo, .contact-info, .contact-form"
+            )
+            .forEach(
+                function(element) {
 
-                if (event.target === this) {
+                    element.style.opacity = "0";
 
-                    closeSearch();
+                    element.style.transform =
+                        "translateY(20px)";
+
+                    element.style.transition =
+                        "opacity .7s ease, transform .7s ease";
+
+                    observer.observe(element);
 
                 }
+            );
 
-            });
-
-
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
-                closeSearch();
-
-            }
-
-        });
 
     </script>
+
 
 </body>
 </html>

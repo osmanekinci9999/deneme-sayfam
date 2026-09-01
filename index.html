@@ -1,149 +1,107 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>EKİNCİ571 | Emre Ekinci</title>
 
 <meta
-name="description"
-content="Emre Ekinci | Gazeteci, Muhabir ve İçerik Üreticisi"
+    name="description"
+    content="Emre Ekinci | Gazeteci, Muhabir ve İçerik Üreticisi"
 />
 
-<meta
-name="author"
-content="Emre Ekinci"
-/>
+<meta name="author" content="Emre Ekinci">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap"
+    rel="stylesheet"
 >
-
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap"
-rel="stylesheet"
->
-
 
 <style>
 
 /* =========================================================
-   TEMEL
+   TEMEL DEĞİŞKENLER
 ========================================================= */
 
 :root{
 
-    --black:#030507;
+    --bg:#030506;
+    --bg2:#07090c;
 
-    --black2:#070a0e;
+    --surface:#0a0d11;
+    --surface2:#0e1218;
 
-    --panel:#0b0e13;
+    --white:#f5f6f7;
+    --soft:#bfc5cc;
+    --muted:#7a838f;
 
-    --panel2:#10151b;
+    --red:#ef172c;
+    --red2:#ff4052;
 
-    --white:#f4f5f6;
+    --line:rgba(255,255,255,.11);
+    --lineStrong:rgba(255,255,255,.18);
 
-    --soft:#b8bec7;
+    --max:1260px;
 
-    --muted:#737b86;
-
-    --red:#ef1a30;
-
-    --red2:#ff4053;
-
-    --line:rgba(255,255,255,.095);
-
-    --line2:rgba(255,255,255,.17);
-
-    --max:1250px;
+    --ease:cubic-bezier(.22,.61,.36,1);
 
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
-
 
 body{
 
     min-height:100vh;
 
-    background:var(--black);
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(239,23,44,.07),
+            transparent 30%
+        ),
+        var(--bg);
 
     color:var(--white);
 
     font-family:
-        "Inter",
+        Inter,
         Arial,
         sans-serif;
 
     overflow-x:hidden;
-
 }
-
 
 body::selection{
-
     background:var(--red);
-
     color:#fff;
-
 }
-
 
 a{
-
     color:inherit;
-
     text-decoration:none;
-
 }
-
 
 button,
 input,
 textarea{
-
     font-family:inherit;
-
-}
-
-
-/* =========================================================
-   GENEL CONTAINER
-========================================================= */
-
-.container{
-
-    width:
-        min(
-            var(--max),
-            calc(100% - 42px)
-        );
-
-    margin:auto;
-
 }
 
 
@@ -151,14 +109,12 @@ textarea{
    HEADER
 ========================================================= */
 
-.header{
+.site-header{
 
     position:fixed;
 
     top:0;
-
     left:0;
-
     right:0;
 
     height:76px;
@@ -166,7 +122,7 @@ textarea{
     z-index:5000;
 
     background:
-        rgba(3,5,7,.90);
+        rgba(3,5,6,.90);
 
     backdrop-filter:
         blur(18px);
@@ -182,10 +138,10 @@ textarea{
     width:
         min(
             var(--max),
-            calc(100% - 42px)
+            calc(100% - 40px)
         );
 
-    height:76px;
+    height:100%;
 
     margin:auto;
 
@@ -195,27 +151,31 @@ textarea{
 
     justify-content:space-between;
 
-    gap:24px;
+    gap:25px;
 
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo{
 
-    min-width:175px;
+    min-width:190px;
+
+    display:block;
 
 }
 
 
 .logo-title{
 
-    font-size:24px;
+    font-size:25px;
+
+    line-height:.95;
 
     font-weight:900;
-
-    line-height:1;
 
     letter-spacing:-1.7px;
 
@@ -233,20 +193,22 @@ textarea{
 
     margin-top:6px;
 
+    color:#bfc5cb;
+
     font-size:7px;
 
     font-weight:700;
 
-    letter-spacing:3.8px;
-
-    color:#b9bec5;
+    letter-spacing:4.2px;
 
 }
 
 
-/* MENU */
+/* =========================================================
+   MENU
+========================================================= */
 
-.main-nav{
+.main-menu{
 
     display:flex;
 
@@ -254,12 +216,12 @@ textarea{
 
     height:100%;
 
-    gap:1px;
+    gap:0;
 
 }
 
 
-.main-nav a{
+.main-menu a{
 
     position:relative;
 
@@ -270,11 +232,11 @@ textarea{
     align-items:center;
 
     padding:
-        0 11px;
+        0 12px;
 
-    color:#c0c5cb;
+    color:#c7ccd2;
 
-    font-size:9px;
+    font-size:10px;
 
     font-weight:800;
 
@@ -282,34 +244,35 @@ textarea{
 
     text-transform:uppercase;
 
-    transition:.2s ease;
+    transition:
+        color .2s ease;
 
 }
 
 
-.main-nav a:hover{
+.main-menu a:hover{
 
     color:#fff;
 
 }
 
 
-.main-nav a.active{
+.main-menu a.active{
 
     color:var(--red);
 
 }
 
 
-.main-nav a.active::after{
+.main-menu a.active::after{
 
     content:"";
 
     position:absolute;
 
-    left:11px;
+    left:12px;
 
-    right:11px;
+    right:12px;
 
     bottom:9px;
 
@@ -320,16 +283,19 @@ textarea{
 }
 
 
-/* KIRMIZI NOKTA */
+/* =========================================================
+   HEADER DOT
+========================================================= */
 
-.header-dot{
+.header-status{
 
-    width:38px;
+    width:40px;
+    height:40px;
 
-    height:38px;
+    flex-shrink:0;
 
     border:
-        1px solid rgba(255,255,255,.23);
+        1px solid rgba(255,255,255,.22);
 
     border-radius:50%;
 
@@ -337,45 +303,43 @@ textarea{
 
     place-items:center;
 
-    flex-shrink:0;
-
 }
 
 
-.header-dot span{
+.header-status span{
 
-    width:8px;
-
-    height:8px;
+    width:9px;
+    height:9px;
 
     border-radius:50%;
 
     background:var(--red);
 
     box-shadow:
-        0 0 14px rgba(239,26,48,.7);
+        0 0 15px rgba(239,23,44,.7);
 
 }
 
 
-/* MOBİL */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-.mobile-button{
+.menu-button{
 
     display:none;
 
-    width:40px;
-
-    height:40px;
+    width:41px;
+    height:41px;
 
     border:
-        1px solid var(--line2);
+        1px solid var(--lineStrong);
 
     border-radius:50%;
 
-    background:#0b0f14;
+    background:#0c1015;
 
-    color:#fff;
+    color:white;
 
     cursor:pointer;
 
@@ -393,10 +357,10 @@ textarea{
     top:76px;
 
     left:0;
-
     right:0;
 
-    background:#070a0d;
+    background:
+        rgba(5,7,9,.98);
 
     border-bottom:
         1px solid var(--line);
@@ -421,11 +385,13 @@ textarea{
     border-bottom:
         1px solid var(--line);
 
-    color:#d1d5da;
+    color:#d0d5da;
 
     font-size:10px;
 
     font-weight:800;
+
+    text-transform:uppercase;
 
 }
 
@@ -438,9 +404,9 @@ textarea{
 
     display:none;
 
-    min-height:100vh;
-
     padding-top:76px;
+
+    min-height:100vh;
 
 }
 
@@ -450,12 +416,12 @@ textarea{
     display:block;
 
     animation:
-        pageIn .42s ease;
+        pageAppear .38s ease;
 
 }
 
 
-@keyframes pageIn{
+@keyframes pageAppear{
 
     from{
 
@@ -491,36 +457,36 @@ textarea{
 
     overflow:hidden;
 
-    background:#030507;
+    background:
+        #030506;
 
 }
 
 
-/* FOTOĞRAF */
+/* ---------------------------------------------------------
+   FOTOĞRAF
+---------------------------------------------------------- */
 
-.home-photo{
+.hero-photo{
 
     position:absolute;
 
     top:0;
-
+    bottom:0;
     right:0;
 
-    bottom:0;
-
-    width:69%;
-
-    z-index:0;
+    width:65%;
 
     overflow:hidden;
+
+    z-index:0;
 
 }
 
 
-.home-photo img{
+.hero-photo img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -529,15 +495,15 @@ textarea{
 
     filter:
         brightness(.63)
-        contrast(1.08)
-        saturate(.83);
+        contrast(1.10)
+        saturate(.84);
 
 }
 
 
-/* FOTOĞRAFIN SOLA ERİMESİ */
+/* FOTOĞRAFIN SOLA GEÇİŞİ */
 
-.home-photo::before{
+.hero-photo::before{
 
     content:"";
 
@@ -552,23 +518,19 @@ textarea{
         linear-gradient(
             90deg,
 
-            rgba(3,5,7,1) 0%,
-
-            rgba(3,5,7,.98) 9%,
-
-            rgba(3,5,7,.89) 20%,
-
-            rgba(3,5,7,.57) 35%,
-
-            rgba(3,5,7,.16) 52%,
-
-            rgba(3,5,7,.04) 100%
+            #030506 0%,
+            #030506 5%,
+            rgba(3,5,6,.97) 13%,
+            rgba(3,5,6,.86) 26%,
+            rgba(3,5,6,.54) 40%,
+            rgba(3,5,6,.16) 56%,
+            rgba(3,5,6,0) 75%
         );
 
 }
 
 
-.home-photo::after{
+.hero-photo::after{
 
     content:"";
 
@@ -579,21 +541,20 @@ textarea{
     z-index:3;
 
     background:
-
         linear-gradient(
             to top,
-            rgba(3,5,7,.72) 0%,
-            transparent 40%
+            rgba(3,5,6,.70),
+            transparent 33%
         );
 
 }
 
 
-/* =========================================================
-   ANA SAYFA İÇERİK
-========================================================= */
+/* ---------------------------------------------------------
+   HERO İÇERİK
+---------------------------------------------------------- */
 
-.home-content{
+.hero-inner{
 
     position:relative;
 
@@ -602,7 +563,7 @@ textarea{
     width:
         min(
             var(--max),
-            calc(100% - 42px)
+            calc(100% - 40px)
         );
 
     min-height:
@@ -617,18 +578,19 @@ textarea{
 }
 
 
-.home-left{
+.hero-copy{
 
-    width:54%;
+    width:53%;
 
-    padding-bottom:100px;
+    padding:
+        10px 0 125px;
 
 }
 
 
 /* MESLEK */
 
-.role{
+.hero-role{
 
     display:flex;
 
@@ -641,9 +603,9 @@ textarea{
 }
 
 
-.role-line{
+.hero-role-line{
 
-    width:25px;
+    width:26px;
 
     height:2px;
 
@@ -652,77 +614,78 @@ textarea{
 }
 
 
-.role-text{
+.hero-role-text{
 
-    color:#9fa7b1;
-
-    font-size:9px;
+    font-size:10px;
 
     font-weight:800;
 
-    letter-spacing:1.8px;
+    letter-spacing:1.9px;
 
-}
-
-
-/* =========================================================
-   İSİM
-========================================================= */
-
-.name{
-
-    font-size:
-        clamp(
-            74px,
-            8vw,
-            116px
-        );
-
-    font-weight:900;
-
-    line-height:.80;
-
-    letter-spacing:-7px;
+    color:#a2aab4;
 
     text-transform:uppercase;
 
 }
 
 
-.name-line{
+/* ---------------------------------------------------------
+   ANA İSİM
+---------------------------------------------------------- */
+
+.hero-name{
+
+    font-size:
+        clamp(
+            80px,
+            8vw,
+            122px
+        );
+
+    line-height:.78;
+
+    letter-spacing:-7px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+}
+
+
+.hero-name .first{
 
     display:block;
 
-}
-
-
-.name-white{
-
-    color:#f1f2f3;
+    color:
+        #f2f3f4;
 
 }
 
 
-.name-red{
+.hero-name .last{
 
-    color:var(--red);
+    display:block;
+
+    color:
+        var(--red);
 
 }
 
 
-/* KÜÇÜK KIRMIZI DETAY */
+/* KÜÇÜK DİKEY DETAY */
 
-.name-red::after{
+.hero-name .last::after{
 
     content:"";
 
     display:inline-block;
 
-    width:12px;
+    width:10px;
 
-    height:37px;
+    height:38px;
 
-    margin-left:7px;
+    margin-left:8px;
 
     background:var(--red);
 
@@ -731,82 +694,92 @@ textarea{
 }
 
 
-/* SLOGAN */
+/* ---------------------------------------------------------
+   SLOGAN
+---------------------------------------------------------- */
 
-.slogan{
+.hero-slogan{
 
     margin-top:30px;
 
-    color:#d5d9de;
+    padding-top:12px;
 
-    font-size:13px;
+    position:relative;
+
+    color:#d6dae0;
+
+    font-size:14px;
 
     font-weight:600;
-
-    letter-spacing:.2px;
 
 }
 
 
-.slogan::before{
+.hero-slogan::before{
 
     content:"";
 
-    display:block;
+    position:absolute;
 
-    width:30px;
+    left:0;
+
+    top:0;
+
+    width:29px;
 
     height:2px;
 
     background:var(--red);
 
-    margin-bottom:10px;
-
 }
 
 
-/* AÇIKLAMA */
+/* ---------------------------------------------------------
+   AÇIKLAMA
+---------------------------------------------------------- */
 
-.description{
+.hero-description{
 
-    max-width:570px;
+    max-width:590px;
 
     margin-top:22px;
 
-    color:#aeb5bf;
+    color:#b2bac4;
 
-    font-size:12px;
+    font-size:13px;
 
-    line-height:1.85;
+    line-height:1.9;
 
 }
 
 
-/* BUTONLAR */
+/* ---------------------------------------------------------
+   BUTONLAR
+---------------------------------------------------------- */
 
-.home-buttons{
+.hero-actions{
 
     display:flex;
 
     gap:10px;
 
-    margin-top:26px;
+    margin-top:25px;
 
 }
 
 
-.button{
+.hero-btn{
+
+    min-height:41px;
+
+    padding:
+        0 20px;
 
     display:inline-flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    min-height:40px;
-
-    padding:
-        0 18px;
+    justify-content:center;
 
     border-radius:6px;
 
@@ -816,16 +789,16 @@ textarea{
 
     text-transform:uppercase;
 
-    transition:.2s ease;
+    transition:.22s ease;
 
 }
 
 
-.button-red{
+.hero-btn.red{
+
+    color:white;
 
     background:var(--red);
-
-    color:#fff;
 
     border:
         1px solid var(--red);
@@ -833,116 +806,116 @@ textarea{
 }
 
 
-.button-red:hover{
+.hero-btn.red:hover{
 
     background:var(--red2);
 
-    transform:
-        translateY(-1px);
-
 }
 
 
-.button-dark{
+.hero-btn.dark{
+
+    color:#dfe2e5;
 
     background:
-        rgba(4,6,8,.45);
-
-    color:#e0e3e6;
+        rgba(4,6,8,.42);
 
     border:
-        1px solid var(--line2);
+        1px solid var(--lineStrong);
 
 }
 
 
-.button-dark:hover{
+.hero-btn.dark:hover{
 
     background:
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.07);
 
 }
 
 
-/* =========================================================
-   SÖZ
-========================================================= */
+/* ---------------------------------------------------------
+   SAĞ ALINTI
+---------------------------------------------------------- */
 
-.quote{
+.hero-quote{
 
     position:absolute;
 
-    top:82px;
+    z-index:12;
 
-    right:32px;
+    top:70px;
 
-    z-index:20;
+    right:38px;
 
-    max-width:250px;
+    max-width:270px;
 
 }
 
 
-.quote-line{
+.hero-quote-bar{
 
     position:absolute;
 
-    left:-10px;
+    left:-12px;
 
     top:0;
 
     width:3px;
 
-    height:45px;
+    height:47px;
 
     background:var(--red);
 
 }
 
 
-.quote-text{
+.hero-quote-text{
 
     font-family:
         "Playfair Display",
         serif;
 
-    font-size:17px;
+    font-size:18px;
 
     font-weight:700;
 
-    line-height:1.2;
+    line-height:1.18;
 
 }
 
 
-.quote-author{
+.hero-quote-name{
 
-    margin-top:7px;
+    margin-top:8px;
 
-    color:#aeb5bd;
+    color:#afb6bf;
 
     font-size:8px;
 
-    letter-spacing:1.5px;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 
 }
 
 
-/* =========================================================
-   ALT 6 KART
-========================================================= */
+/* ---------------------------------------------------------
+   ALT KARTLAR
+---------------------------------------------------------- */
 
-.home-bottom{
+.hero-bottom{
 
     position:absolute;
 
-    left:0;
+    z-index:20;
 
+    left:0;
     right:0;
 
-    bottom:15px;
-
-    z-index:20;
+    bottom:14px;
 
 }
 
@@ -954,26 +927,30 @@ textarea{
     grid-template-columns:
         repeat(6,1fr);
 
-    gap:10px;
+    gap:9px;
 
 }
 
 
 .feature{
 
-    min-height:112px;
+    min-height:116px;
 
-    padding:15px;
+    padding:14px 15px;
 
     background:
-        rgba(6,8,11,.79);
+        rgba(7,10,13,.82);
 
     border:
-        1px solid rgba(255,255,255,.15);
+        1px solid rgba(255,255,255,.17);
 
-    backdrop-filter:blur(7px);
+    backdrop-filter:
+        blur(8px);
 
-    transition:.22s ease;
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        background .22s ease;
 
 }
 
@@ -984,10 +961,10 @@ textarea{
         translateY(-3px);
 
     border-color:
-        rgba(239,26,48,.48);
+        rgba(239,23,44,.48);
 
     background:
-        rgba(8,10,14,.88);
+        rgba(10,13,17,.92);
 
 }
 
@@ -998,9 +975,9 @@ textarea{
 
     height:30px;
 
-    color:var(--red);
-
     margin-bottom:9px;
+
+    color:var(--red);
 
 }
 
@@ -1008,14 +985,13 @@ textarea{
 .feature-icon svg{
 
     width:30px;
-
     height:30px;
 
     fill:none;
 
     stroke:currentColor;
 
-    stroke-width:1.5;
+    stroke-width:1.45;
 
     stroke-linecap:round;
 
@@ -1030,18 +1006,18 @@ textarea{
 
     font-weight:800;
 
-    margin-bottom:6px;
+    margin-bottom:5px;
 
 }
 
 
 .feature p{
 
-    color:#858e99;
+    color:#8c95a0;
 
     font-size:8px;
 
-    line-height:1.55;
+    line-height:1.52;
 
 }
 
@@ -1062,16 +1038,29 @@ textarea{
 
         radial-gradient(
             circle at 80% 0%,
-            rgba(239,26,48,.07),
+            rgba(239,23,44,.06),
             transparent 28%
         ),
 
-        var(--black);
+        var(--bg);
 
 }
 
 
-.page-head{
+.inner-container{
+
+    width:
+        min(
+            var(--max),
+            calc(100% - 40px)
+        );
+
+    margin:auto;
+
+}
+
+
+.page-heading{
 
     display:flex;
 
@@ -1079,11 +1068,11 @@ textarea{
 
     justify-content:space-between;
 
-    gap:30px;
+    gap:35px;
 
     margin-bottom:30px;
 
-    padding-bottom:23px;
+    padding-bottom:24px;
 
     border-bottom:
         1px solid var(--line);
@@ -1091,7 +1080,7 @@ textarea{
 }
 
 
-.page-label{
+.heading-label{
 
     color:var(--red);
 
@@ -1103,10 +1092,12 @@ textarea{
 
     margin-bottom:8px;
 
+    text-transform:uppercase;
+
 }
 
 
-.page-head h1{
+.page-heading h1{
 
     font-family:
         "Playfair Display",
@@ -1124,9 +1115,9 @@ textarea{
 }
 
 
-.page-info{
+.heading-description{
 
-    max-width:500px;
+    max-width:510px;
 
     color:var(--muted);
 
@@ -1151,15 +1142,17 @@ textarea{
 
     gap:20px;
 
-    padding:13px 15px;
+    padding:
+        13px 15px;
 
-    background:var(--panel);
+    background:var(--surface);
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
 
-    border-radius:9px;
+    border-radius:8px;
 
-    margin-bottom:18px;
+    margin-bottom:15px;
 
 }
 
@@ -1198,16 +1191,16 @@ textarea{
 
 .news-card{
 
+    overflow:hidden;
+
+    background:var(--surface);
+
     border:
         1px solid var(--line);
 
     border-radius:12px;
 
-    overflow:hidden;
-
-    background:var(--panel);
-
-    transition:.25s ease;
+    transition:.22s ease;
 
 }
 
@@ -1218,14 +1211,14 @@ textarea{
         translateY(-4px);
 
     border-color:
-        rgba(239,26,48,.35);
+        rgba(239,23,44,.35);
 
 }
 
 
 .news-image{
 
-    height:205px;
+    height:210px;
 
     overflow:hidden;
 
@@ -1240,7 +1233,7 @@ textarea{
 
     object-fit:cover;
 
-    transition:.5s ease;
+    transition:.45s ease;
 
 }
 
@@ -1260,7 +1253,7 @@ textarea{
 }
 
 
-.news-category{
+.news-label{
 
     color:var(--red);
 
@@ -1269,6 +1262,8 @@ textarea{
     font-weight:900;
 
     letter-spacing:1.5px;
+
+    text-transform:uppercase;
 
 }
 
@@ -1281,7 +1276,7 @@ textarea{
 
     font-size:20px;
 
-    line-height:1.18;
+    line-height:1.2;
 
     margin:
         8px 0;
@@ -1300,11 +1295,13 @@ textarea{
 }
 
 
-.news-link{
+.news-body a{
 
     display:inline-block;
 
-    margin-top:11px;
+    margin-top:10px;
+
+    color:#e2e5e9;
 
     font-size:8px;
 
@@ -1314,10 +1311,10 @@ textarea{
 
 
 /* =========================================================
-   RÖPORTAJ
+   RÖPORTAJLAR
 ========================================================= */
 
-.interviews{
+.interview-list{
 
     display:grid;
 
@@ -1330,7 +1327,8 @@ textarea{
 
     display:grid;
 
-    grid-template-columns:180px 1fr auto;
+    grid-template-columns:
+        190px 1fr auto;
 
     gap:20px;
 
@@ -1338,9 +1336,10 @@ textarea{
 
     padding:14px;
 
-    background:var(--panel);
+    background:var(--surface);
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
 
     border-radius:11px;
 
@@ -1349,11 +1348,11 @@ textarea{
 
 .interview-image{
 
-    height:115px;
-
-    border-radius:8px;
+    height:120px;
 
     overflow:hidden;
+
+    border-radius:8px;
 
 }
 
@@ -1390,7 +1389,7 @@ textarea{
 
     font-size:22px;
 
-    line-height:1.2;
+    line-height:1.15;
 
     margin:
         7px 0;
@@ -1410,12 +1409,12 @@ textarea{
 .interview-button{
 
     border:
-        1px solid var(--line2);
+        1px solid var(--lineStrong);
+
+    border-radius:6px;
 
     padding:
         9px 12px;
-
-    border-radius:6px;
 
     font-size:8px;
 
@@ -1425,7 +1424,7 @@ textarea{
 
 
 /* =========================================================
-   VİDEO
+   VIDEO
 ========================================================= */
 
 .video-grid{
@@ -1440,23 +1439,23 @@ textarea{
 }
 
 
-.video{
+.video-card{
 
     position:relative;
 
     height:310px;
+
+    overflow:hidden;
 
     border:
         1px solid var(--line);
 
     border-radius:12px;
 
-    overflow:hidden;
-
 }
 
 
-.video img{
+.video-card img{
 
     width:100%;
 
@@ -1469,7 +1468,7 @@ textarea{
 }
 
 
-.video:hover img{
+.video-card:hover img{
 
     transform:
         scale(1.05);
@@ -1477,7 +1476,7 @@ textarea{
 }
 
 
-.video::after{
+.video-card::after{
 
     content:"";
 
@@ -1488,34 +1487,34 @@ textarea{
     background:
         linear-gradient(
             to top,
-            rgba(0,0,0,.9),
-            transparent 58%
+            rgba(0,0,0,.92),
+            transparent 62%
         );
 
 }
 
 
-.play{
+.video-play{
 
     position:absolute;
+
+    z-index:3;
 
     top:18px;
 
     left:18px;
 
-    z-index:3;
+    width:43px;
 
-    width:42px;
-
-    height:42px;
+    height:43px;
 
     border:
-        1px solid rgba(255,255,255,.23);
+        1px solid rgba(255,255,255,.24);
 
     border-radius:50%;
 
     background:
-        rgba(0,0,0,.52);
+        rgba(0,0,0,.48);
 
     display:grid;
 
@@ -1528,13 +1527,13 @@ textarea{
 
     position:absolute;
 
+    z-index:4;
+
     left:18px;
 
     right:18px;
 
     bottom:18px;
-
-    z-index:4;
 
 }
 
@@ -1560,7 +1559,7 @@ textarea{
 
     font-size:22px;
 
-    line-height:1.15;
+    line-height:1.1;
 
     margin-top:5px;
 
@@ -1568,7 +1567,7 @@ textarea{
 
 
 /* =========================================================
-   FOTOĞRAF
+   FOTOĞRAFLAR
 ========================================================= */
 
 .photo-grid{
@@ -1585,14 +1584,14 @@ textarea{
 
 .photo{
 
-    height:270px;
-
-    border-radius:10px;
+    height:275px;
 
     overflow:hidden;
 
     border:
         1px solid var(--line);
+
+    border-radius:10px;
 
 }
 
@@ -1644,15 +1643,15 @@ textarea{
 
 .project{
 
-    min-height:230px;
+    min-height:235px;
 
     padding:26px;
 
     background:
         linear-gradient(
             145deg,
-            var(--panel2),
-            var(--panel)
+            var(--surface2),
+            var(--surface)
         );
 
     border:
@@ -1707,12 +1706,12 @@ textarea{
    HAKKIMDA
 ========================================================= */
 
-.about-grid{
+.about-layout{
 
     display:grid;
 
     grid-template-columns:
-        .75fr 1.25fr;
+        .8fr 1.2fr;
 
     gap:35px;
 
@@ -1723,13 +1722,14 @@ textarea{
 
 .about-image{
 
-    height:510px;
+    height:520px;
 
     overflow:hidden;
 
-    border-radius:12px;
+    border:
+        1px solid var(--line);
 
-    border:1px solid var(--line);
+    border-radius:12px;
 
 }
 
@@ -1745,24 +1745,22 @@ textarea{
 }
 
 
-.about-copy p{
+.about-content p{
 
-    color:#bec4cc;
+    color:#bec5cd;
 
     font-size:13px;
 
     line-height:2;
 
-    margin-bottom:18px;
+    margin-bottom:17px;
 
 }
 
 
-.about-tag{
+.about-signature{
 
-    display:inline-block;
-
-    margin-top:10px;
+    margin-top:22px;
 
     color:var(--red2);
 
@@ -1779,12 +1777,12 @@ textarea{
    İLETİŞİM
 ========================================================= */
 
-.contact-grid{
+.contact-layout{
 
     display:grid;
 
     grid-template-columns:
-        .7fr 1.3fr;
+        .72fr 1.28fr;
 
     gap:16px;
 
@@ -1793,14 +1791,14 @@ textarea{
 
 .contact-panel{
 
-    background:var(--panel);
+    padding:25px;
+
+    background:var(--surface);
 
     border:
         1px solid var(--line);
 
     border-radius:12px;
-
-    padding:25px;
 
 }
 
@@ -1898,14 +1896,14 @@ textarea{
 
     padding:12px;
 
+    background:#07090c;
+
+    color:white;
+
     border:
         1px solid var(--line);
 
     border-radius:7px;
-
-    background:#07090c;
-
-    color:white;
 
     outline:none;
 
@@ -1927,7 +1925,7 @@ textarea{
 .field textarea:focus{
 
     border-color:
-        rgba(239,26,48,.55);
+        rgba(239,23,44,.6);
 
 }
 
@@ -1937,6 +1935,8 @@ textarea{
     display:flex;
 
     gap:8px;
+
+    align-items:flex-start;
 
     color:var(--muted);
 
@@ -1951,10 +1951,10 @@ textarea{
 
 
 /* =========================================================
-   ZİYARETÇİ
+   ZİYARETÇİ ANALİZ ALANI
 ========================================================= */
 
-.visitor{
+.visitor-panel{
 
     margin-top:18px;
 
@@ -1967,9 +1967,9 @@ textarea{
 
     background:
         linear-gradient(
-            110deg,
-            rgba(239,26,48,.08),
-            var(--panel)
+            120deg,
+            rgba(239,23,44,.07),
+            var(--surface)
         );
 
     display:flex;
@@ -1983,7 +1983,7 @@ textarea{
 }
 
 
-.visitor h3{
+.visitor-panel h3{
 
     font-family:
         "Playfair Display",
@@ -1996,7 +1996,7 @@ textarea{
 }
 
 
-.visitor p{
+.visitor-panel p{
 
     color:var(--muted);
 
@@ -2005,17 +2005,17 @@ textarea{
 }
 
 
-.visit-count{
+.visitor-count{
 
     border:
-        1px solid var(--line2);
+        1px solid var(--lineStrong);
 
     border-radius:7px;
 
     padding:
         10px 13px;
 
-    color:#d8dce1;
+    color:#dfe2e5;
 
     font-size:9px;
 
@@ -2025,50 +2025,49 @@ textarea{
 
 
 /* =========================================================
-   MINI AI
+   MİNİ YAPAY ZEKÂ ASİSTANI
 ========================================================= */
 
-.bot-button{
+.ai-button{
 
     position:fixed;
 
-    right:21px;
+    right:22px;
 
-    bottom:21px;
+    bottom:22px;
+
+    z-index:7000;
 
     width:54px;
 
     height:54px;
 
-    z-index:7000;
+    border:
+        1px solid rgba(255,255,255,.28);
+
+    border-radius:50%;
+
+    background:var(--red);
+
+    color:white;
 
     display:grid;
 
     place-items:center;
 
-    border:
-        1px solid rgba(255,255,255,.24);
-
-    border-radius:50%;
-
-    background:
-        var(--red);
-
-    color:#fff;
+    cursor:pointer;
 
     font-size:20px;
 
-    cursor:pointer;
-
     box-shadow:
-        0 12px 35px rgba(0,0,0,.5);
+        0 12px 38px rgba(0,0,0,.45);
 
     transition:.2s ease;
 
 }
 
 
-.bot-button:hover{
+.ai-button:hover{
 
     transform:
         translateY(-2px);
@@ -2076,59 +2075,59 @@ textarea{
 }
 
 
-.bot-window{
+.ai-window{
 
     display:none;
 
+    flex-direction:column;
+
     position:fixed;
 
-    right:21px;
+    right:22px;
 
-    bottom:87px;
+    bottom:88px;
+
+    z-index:7000;
 
     width:
         min(
-            365px,
+            370px,
             calc(100vw - 24px)
         );
 
     height:485px;
-
-    z-index:7000;
-
-    flex-direction:column;
 
     overflow:hidden;
 
     background:#080b10;
 
     border:
-        1px solid var(--line2);
+        1px solid var(--lineStrong);
 
     border-radius:15px;
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,.6);
+        0 25px 80px rgba(0,0,0,.58);
 
 }
 
 
-.bot-window.open{
+.ai-window.open{
 
     display:flex;
 
 }
 
 
-.bot-header{
+.ai-header{
 
     min-height:59px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
     padding:
         0 15px;
@@ -2141,7 +2140,7 @@ textarea{
 }
 
 
-.bot-title{
+.ai-title{
 
     display:flex;
 
@@ -2152,11 +2151,13 @@ textarea{
 }
 
 
-.bot-avatar{
+.ai-avatar{
 
     width:31px;
 
     height:31px;
+
+    border-radius:50%;
 
     display:grid;
 
@@ -2164,12 +2165,10 @@ textarea{
 
     background:var(--red);
 
-    border-radius:50%;
-
 }
 
 
-.bot-title strong{
+.ai-title strong{
 
     display:block;
 
@@ -2178,16 +2177,20 @@ textarea{
 }
 
 
-.bot-title small{
+.ai-title small{
+
+    display:block;
 
     color:var(--muted);
 
     font-size:7px;
 
+    margin-top:2px;
+
 }
 
 
-.bot-close{
+.ai-close{
 
     width:29px;
 
@@ -2207,7 +2210,7 @@ textarea{
 }
 
 
-.bot-messages{
+.ai-messages{
 
     flex:1;
 
@@ -2218,14 +2221,14 @@ textarea{
 }
 
 
-.message{
+.ai-message{
 
-    max-width:84%;
+    max-width:85%;
+
+    margin-bottom:9px;
 
     padding:
         10px 11px;
-
-    margin-bottom:9px;
 
     border-radius:10px;
 
@@ -2236,11 +2239,11 @@ textarea{
 }
 
 
-.message.bot{
+.ai-message.bot{
 
     background:#111720;
 
-    color:#d0d4da;
+    color:#d0d5db;
 
     border:
         1px solid var(--line);
@@ -2248,7 +2251,7 @@ textarea{
 }
 
 
-.message.user{
+.ai-message.user{
 
     margin-left:auto;
 
@@ -2259,9 +2262,9 @@ textarea{
 }
 
 
-.bot-input{
+.ai-input{
 
-    min-height:56px;
+    min-height:57px;
 
     display:flex;
 
@@ -2275,20 +2278,20 @@ textarea{
 }
 
 
-.bot-input input{
+.ai-input input{
 
     flex:1;
 
     min-width:0;
 
+    background:#05070a;
+
+    color:white;
+
     border:
         1px solid var(--line);
 
     border-radius:7px;
-
-    background:#05070a;
-
-    color:white;
 
     outline:none;
 
@@ -2300,17 +2303,17 @@ textarea{
 }
 
 
-.bot-input button{
+.ai-input button{
 
-    width:41px;
+    width:42px;
 
     border:0;
 
     border-radius:7px;
 
-    background:var(--red);
-
     color:white;
+
+    background:var(--red);
 
     cursor:pointer;
 
@@ -2333,7 +2336,15 @@ textarea{
 
 .footer-inner{
 
-    min-height:72px;
+    width:
+        min(
+            var(--max),
+            calc(100% - 40px)
+        );
+
+    min-height:74px;
+
+    margin:auto;
 
     display:flex;
 
@@ -2346,7 +2357,7 @@ textarea{
 
 .footer-inner p{
 
-    color:#68717c;
+    color:#68727e;
 
     font-size:8px;
 
@@ -2359,61 +2370,40 @@ textarea{
 
 @media(max-width:1180px){
 
-    .main-nav a{
-
-        padding:
-            0 7px;
-
-        font-size:8px;
-
-    }
-
-    .logo{
-
-        min-width:150px;
-
-    }
-
-    .logo-title{
-
-        font-size:21px;
-
-    }
-
-}
-
-
-@media(max-width:1000px){
-
-    .main-nav{
+    .main-menu{
 
         display:none;
 
     }
 
-    .mobile-button{
+
+    .menu-button{
 
         display:block;
 
     }
 
-    .header-dot{
+
+    .header-status{
 
         display:none;
 
     }
 
-    .home-left{
 
-        width:62%;
+    .hero-copy{
+
+        width:61%;
+
+    }
+
+
+    .hero-photo{
+
+        width:66%;
 
     }
 
-    .home-photo{
-
-        width:70%;
-
-    }
 
     .feature-grid{
 
@@ -2422,11 +2412,109 @@ textarea{
 
     }
 
+
     .feature:nth-child(n+4){
 
         display:none;
 
     }
+
+}
+
+
+@media(max-width:850px){
+
+    .hero-photo{
+
+        width:100%;
+
+        height:65%;
+
+        bottom:auto;
+
+    }
+
+
+    .hero-photo::before{
+
+        background:
+
+            linear-gradient(
+                to bottom,
+                rgba(3,5,6,.05),
+                rgba(3,5,6,.18) 30%,
+                rgba(3,5,6,.90) 100%
+            );
+
+    }
+
+
+    .hero-inner{
+
+        min-height:auto;
+
+        display:block;
+
+    }
+
+
+    .hero-copy{
+
+        width:100%;
+
+        padding:
+            52vh 0 20px;
+
+    }
+
+
+    .hero-name{
+
+        font-size:70px;
+
+        letter-spacing:-4px;
+
+    }
+
+
+    .hero-quote{
+
+        top:25px;
+
+        right:18px;
+
+        max-width:205px;
+
+    }
+
+
+    .hero-bottom{
+
+        position:relative;
+
+        bottom:auto;
+
+        margin-top:25px;
+
+        padding-bottom:25px;
+
+    }
+
+
+    .feature-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .feature:nth-child(n){
+
+        display:block;
+
+    }
+
 
     .news-grid{
 
@@ -2435,6 +2523,7 @@ textarea{
 
     }
 
+
     .video-grid{
 
         grid-template-columns:
@@ -2442,14 +2531,16 @@ textarea{
 
     }
 
-    .about-grid{
+
+    .about-layout{
 
         grid-template-columns:
             1fr;
 
     }
 
-    .contact-grid{
+
+    .contact-layout{
 
         grid-template-columns:
             1fr;
@@ -2459,11 +2550,13 @@ textarea{
 }
 
 
-@media(max-width:700px){
+@media(max-width:650px){
 
     .container,
+    .inner-container,
     .header-inner,
-    .home-content{
+    .footer-inner,
+    .hero-inner{
 
         width:
             calc(100% - 24px);
@@ -2471,7 +2564,7 @@ textarea{
     }
 
 
-    .header,
+    .site-header,
     .header-inner{
 
         height:70px;
@@ -2509,111 +2602,36 @@ textarea{
     }
 
 
-    .home{
+    .hero-photo{
 
-        min-height:auto;
-
-    }
-
-
-    .home-photo{
-
-        position:absolute;
-
-        top:0;
-
-        right:0;
-
-        width:100%;
-
-        height:62vh;
+        height:54vh;
 
     }
 
 
-    .home-photo::before{
-
-        background:
-
-            linear-gradient(
-                to bottom,
-                rgba(3,5,7,.05),
-                rgba(3,5,7,.35) 40%,
-                rgba(3,5,7,.92) 95%
-            );
-
-    }
-
-
-    .home-photo::after{
-
-        background:none;
-
-    }
-
-
-    .home-content{
-
-        min-height:auto;
+    .hero-copy{
 
         padding-top:
-            54vh;
-
-        padding-bottom:30px;
-
-        display:block;
+            46vh;
 
     }
 
 
-    .home-left{
+    .hero-name{
 
-        width:100%;
-
-    }
-
-
-    .name{
-
-        font-size:
-            63px;
-
-        letter-spacing:
-            -4px;
+        font-size:57px;
 
     }
 
 
-    .name-red::after{
-
-        width:7px;
-
-        height:22px;
-
-        margin-left:5px;
-
-    }
-
-
-    .role-text{
-
-        font-size:8px;
-
-        letter-spacing:1.3px;
-
-    }
-
-
-    .description{
+    .hero-description{
 
         font-size:10px;
 
-        line-height:1.8;
-
     }
 
 
-    .home-buttons{
+    .hero-actions{
 
         flex-direction:column;
 
@@ -2622,39 +2640,27 @@ textarea{
     }
 
 
-    .button{
+    .hero-btn{
 
-        width:
-            220px;
-
-    }
-
-
-    .quote{
-
-        top:22px;
-
-        right:15px;
-
-        max-width:190px;
+        width:220px;
 
     }
 
 
-    .quote-text{
+    .hero-quote{
+
+        top:20px;
+
+        right:12px;
+
+        max-width:185px;
+
+    }
+
+
+    .hero-quote-text{
 
         font-size:14px;
-
-    }
-
-
-    .home-bottom{
-
-        position:relative;
-
-        bottom:auto;
-
-        margin-top:27px;
 
     }
 
@@ -2662,28 +2668,7 @@ textarea{
     .feature-grid{
 
         grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-
-    .feature:nth-child(n){
-
-        display:block;
-
-    }
-
-
-    .page-head{
-
-        display:block;
-
-    }
-
-
-    .page-info{
-
-        margin-top:14px;
+            1fr;
 
     }
 
@@ -2706,6 +2691,20 @@ textarea{
     }
 
 
+    .page-heading{
+
+        display:block;
+
+    }
+
+
+    .heading-description{
+
+        margin-top:13px;
+
+    }
+
+
     .interview{
 
         grid-template-columns:
@@ -2716,7 +2715,7 @@ textarea{
 
     .interview-image{
 
-        height:200px;
+        height:210px;
 
     }
 
@@ -2736,7 +2735,7 @@ textarea{
     }
 
 
-    .visitor{
+    .visitor-panel{
 
         flex-direction:column;
 
@@ -2751,44 +2750,18 @@ textarea{
 
         justify-content:center;
 
-        gap:10px;
+        gap:9px;
 
-        padding:20px 0;
+        padding:
+            20px 0;
 
-    }
-
-}
-
-
-@media(max-width:430px){
-
-    .name{
-
-        font-size:
-            56px;
-
-    }
-
-
-    .feature-grid{
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .feature{
-
-        min-height:
-            100px;
+        text-align:center;
 
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -2799,7 +2772,7 @@ textarea{
      HEADER
 ========================================================= -->
 
-<header class="header">
+<header class="site-header">
 
 <div class="header-inner">
 
@@ -2807,7 +2780,7 @@ textarea{
 <a
 href="#anasayfa"
 class="logo"
-onclick="navigate('anasayfa')"
+onclick="goToPage('anasayfa')"
 >
 
 <div class="logo-title">
@@ -2821,7 +2794,7 @@ HAKİKATİN İZİNDE
 </a>
 
 
-<nav class="main-nav">
+<nav class="main-menu">
 
 
 <a
@@ -2892,14 +2865,14 @@ data-page="iletisim"
 
 
 <button
-class="mobile-button"
-onclick="toggleMobile()"
+class="menu-button"
+onclick="toggleMobileMenu()"
 >
 ☰
 </button>
 
 
-<div class="header-dot">
+<div class="header-status">
 <span></span>
 </div>
 
@@ -2912,37 +2885,70 @@ id="mobileMenu"
 class="mobile-menu"
 >
 
-<a href="#anasayfa" onclick="mobileGo('anasayfa')">
+
+<a
+href="#anasayfa"
+onclick="mobileNavigate('anasayfa')"
+>
 ANA SAYFA
 </a>
 
-<a href="#haberler" onclick="mobileGo('haberler')">
+
+<a
+href="#haberler"
+onclick="mobileNavigate('haberler')"
+>
 HABERLER
 </a>
 
-<a href="#roportajlar" onclick="mobileGo('roportajlar')">
+
+<a
+href="#roportajlar"
+onclick="mobileNavigate('roportajlar')"
+>
 RÖPORTAJLAR
 </a>
 
-<a href="#videolar" onclick="mobileGo('videolar')">
+
+<a
+href="#videolar"
+onclick="mobileNavigate('videolar')"
+>
 VİDEOLAR
 </a>
 
-<a href="#fotograflar" onclick="mobileGo('fotograflar')">
+
+<a
+href="#fotograflar"
+onclick="mobileNavigate('fotograflar')"
+>
 FOTOĞRAFLAR
 </a>
 
-<a href="#projeler" onclick="mobileGo('projeler')">
+
+<a
+href="#projeler"
+onclick="mobileNavigate('projeler')"
+>
 PROJELER
 </a>
 
-<a href="#hakkimda" onclick="mobileGo('hakkimda')">
+
+<a
+href="#hakkimda"
+onclick="mobileNavigate('hakkimda')"
+>
 HAKKIMDA
 </a>
 
-<a href="#iletisim" onclick="mobileGo('iletisim')">
+
+<a
+href="#iletisim"
+onclick="mobileNavigate('iletisim')"
+>
 İLETİŞİM
 </a>
+
 
 </div>
 
@@ -2962,57 +2968,54 @@ class="page active"
 <div class="home">
 
 
-<div class="home-photo">
+<div class="hero-photo">
 
 <img
-src="emreekinci.png"
-alt="Emre Ekinci - Gazeteci Muhabir"
+src="./emreekinci.png"
+alt="Emre Ekinci"
 >
 
 </div>
 
 
-<div class="home-content">
+<div class="hero-inner">
 
 
-<div class="home-left">
+<div class="hero-copy">
 
 
-<div class="role">
+<div class="hero-role">
 
-<div class="role-line"></div>
+<div class="hero-role-line"></div>
 
-<div class="role-text">
+<div class="hero-role-text">
 GAZETECİ / MUHABİR / İÇERİK ÜRETİCİSİ
 </div>
 
 </div>
 
 
-<div class="name">
+<div class="hero-name">
 
-
-<span class="name-line name-white">
+<span class="first">
 EMRE
 </span>
 
-
-<span class="name-line name-red">
+<span class="last">
 EKİNCİ
 </span>
-
 
 </div>
 
 
-<div class="slogan">
+<div class="hero-slogan">
 
 SAHADAYIM, GÖRÜYORUM, ANLATIYORUM.
 
 </div>
 
 
-<div class="description">
+<div class="hero-description">
 
 Haberin peşinde, insanın izinde...
 Gerçeği arıyor, hikâyeleri gün yüzüne çıkarıyor,
@@ -3021,13 +3024,13 @@ topluma dokunan içerikler üretiyorum.
 </div>
 
 
-<div class="home-buttons">
+<div class="hero-actions">
 
 
 <a
 href="#roportajlar"
-class="button button-red"
-onclick="navigate('roportajlar')"
+class="hero-btn red"
+onclick="goToPage('roportajlar')"
 >
 RÖPORTAJLARIM →
 </a>
@@ -3035,8 +3038,8 @@ RÖPORTAJLARIM →
 
 <a
 href="#projeler"
-class="button button-dark"
-onclick="navigate('projeler')"
+class="hero-btn dark"
+onclick="goToPage('projeler')"
 >
 ÇALIŞMALARIM →
 </a>
@@ -3048,11 +3051,11 @@ onclick="navigate('projeler')"
 </div>
 
 
-<div class="quote">
+<div class="hero-quote">
 
-<div class="quote-line"></div>
+<div class="hero-quote-bar"></div>
 
-<div class="quote-text">
+<div class="hero-quote-text">
 
 Tarafsız bilgi,
 doğru haber,
@@ -3060,7 +3063,7 @@ güçlü toplum.
 
 </div>
 
-<div class="quote-author">
+<div class="hero-quote-name">
 EMRE EKİNCİ
 </div>
 
@@ -3070,21 +3073,22 @@ EMRE EKİNCİ
 </div>
 
 
-<!-- ALT ALAN -->
+<!-- =======================================================
+     ANA SAYFA ALT 6 KART
+======================================================== -->
 
+<div class="hero-bottom">
 
-<div class="home-bottom">
 
 <div class="container feature-grid">
 
 
-<!-- HABERLER -->
-
 <a
 href="#haberler"
 class="feature"
-onclick="navigate('haberler')"
+onclick="goToPage('haberler')"
 >
+
 
 <div class="feature-icon">
 
@@ -3123,25 +3127,27 @@ y2="16"
 
 </div>
 
+
 <h3>
 HABERLER
 </h3>
 
+
 <p>
 Gündemden sıcak gelişmeler,
-yerelden ulusala haberler.
+yerelden ulusala son haberler.
 </p>
+
 
 </a>
 
 
-<!-- RÖPORTAJ -->
-
 <a
 href="#roportajlar"
 class="feature"
-onclick="navigate('roportajlar')"
+onclick="goToPage('roportajlar')"
 >
+
 
 <div class="feature-icon">
 
@@ -3161,25 +3167,27 @@ d="M5 21c1-5 3-7 7-7s6 2 7 7"
 
 </div>
 
+
 <h3>
 RÖPORTAJLAR
 </h3>
+
 
 <p>
 Sokakta, sahada, masada...
 İnsan hikâyeleri ve özel röportajlar.
 </p>
 
+
 </a>
 
-
-<!-- VİDEOLAR -->
 
 <a
 href="#videolar"
 class="feature"
-onclick="navigate('videolar')"
+onclick="goToPage('videolar')"
 >
+
 
 <div class="feature-icon">
 
@@ -3199,25 +3207,27 @@ points="10,8 16,12 10,16"
 
 </div>
 
+
 <h3>
 VİDEOLAR
 </h3>
 
+
 <p>
-Haber videoları,
-saha görüntüleri ve özel içerikler.
+Haber videoları, saha görüntüleri
+ve özel video çalışmaları.
 </p>
+
 
 </a>
 
 
-<!-- FOTOĞRAFLAR -->
-
 <a
 href="#fotograflar"
 class="feature"
-onclick="navigate('fotograflar')"
+onclick="goToPage('fotograflar')"
 >
+
 
 <div class="feature-icon">
 
@@ -3245,25 +3255,27 @@ d="M8 7l2-3h4l2 3"
 
 </div>
 
+
 <h3>
 FOTOĞRAFLAR
 </h3>
 
+
 <p>
-Anı yakalıyorum,
+Anı yakalıyor,
 karelerle anlatıyorum.
 </p>
+
 
 </a>
 
 
-<!-- YAPAY ZEKA -->
-
 <a
 href="#projeler"
 class="feature"
-onclick="navigate('projeler')"
+onclick="goToPage('projeler')"
 >
+
 
 <div class="feature-icon">
 
@@ -3311,25 +3323,27 @@ d="M7 17l-2 2"
 
 </div>
 
+
 <h3>
 YAPAY ZEKÂ
 </h3>
 
+
 <p>
-AI destekli içerikler,
-görseller ve deneysel çalışmalar.
+Yapay zekâ destekli içerikler,
+görseller ve deneysel projeler.
 </p>
+
 
 </a>
 
 
-<!-- PROJELER -->
-
 <a
 href="#projeler"
 class="feature"
-onclick="navigate('projeler')"
+onclick="goToPage('projeler')"
 >
+
 
 <div class="feature-icon">
 
@@ -3357,14 +3371,17 @@ r="2"
 
 </div>
 
+
 <h3>
 PROJELER
 </h3>
+
 
 <p>
 Kişisel projelerim,
 çalışmalarım ve üretim süreçlerim.
 </p>
+
 
 </a>
 
@@ -3372,6 +3389,7 @@ Kişisel projelerim,
 </div>
 
 </div>
+
 
 </div>
 
@@ -3387,16 +3405,18 @@ id="page-haberler"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
+
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 GAZETECİLİK
 </div>
 
@@ -3406,21 +3426,24 @@ Haberler
 
 </div>
 
-<p class="page-info">
 
-Mersin'de hazırladığım haber çalışmaları.
-İLKHA'daki yayınlarım ve Mersin gündemini
-takip edebileceğiniz alan.
+<p class="heading-description">
+
+Mersin başta olmak üzere hazırladığım haber
+çalışmaları. İLKHA'da yayımlanan içeriklere
+doğrudan ulaşabilirsiniz.
 
 </p>
+
 
 </div>
 
 
 <div class="news-toolbar">
 
+
 <span id="newsStatus">
-İLKHA Mersin haberleri hazırlanıyor...
+İLKHA Mersin haberleri yükleniyor...
 </span>
 
 
@@ -3431,6 +3454,7 @@ rel="noopener noreferrer"
 >
 İLKHA MERSİN →
 </a>
+
 
 </div>
 
@@ -3443,18 +3467,20 @@ class="news-grid"
 
 <article class="news-card">
 
+
 <div class="news-image">
 
 <img
-src="emreekinci.png"
-alt="Emre Ekinci"
+src="./emreekinci.png"
+alt="Mersin haberleri"
 >
 
 </div>
 
+
 <div class="news-body">
 
-<div class="news-category">
+<div class="news-label">
 MERSİN
 </div>
 
@@ -3463,12 +3489,11 @@ Mersin'den Güncel Haberler
 </h3>
 
 <p>
-Mersin'deki gelişmeleri ve hazırladığım
-saha haberlerini takip edin.
+Mersin'deki gelişmeleri ve saha haberlerini
+İLKHA üzerinden takip edebilirsiniz.
 </p>
 
 <a
-class="news-link"
 href="https://www.ilkha.com/mersin"
 target="_blank"
 rel="noopener noreferrer"
@@ -3478,23 +3503,26 @@ rel="noopener noreferrer"
 
 </div>
 
+
 </article>
 
 
 <article class="news-card">
 
+
 <div class="news-image">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Gazetecilik"
 >
 
 </div>
 
+
 <div class="news-body">
 
-<div class="news-category">
+<div class="news-label">
 SAHA
 </div>
 
@@ -3508,7 +3536,6 @@ insanların arasından haberler.
 </p>
 
 <a
-class="news-link"
 href="https://www.ilkha.com/"
 target="_blank"
 rel="noopener noreferrer"
@@ -3518,23 +3545,26 @@ rel="noopener noreferrer"
 
 </div>
 
+
 </article>
 
 
 <article class="news-card">
 
+
 <div class="news-image">
 
 <img
-src="emreekinci.png"
-alt="Haber"
+src="./emreekinci.png"
+alt="Gündem"
 >
 
 </div>
 
+
 <div class="news-body">
 
-<div class="news-category">
+<div class="news-label">
 GÜNDEM
 </div>
 
@@ -3543,12 +3573,11 @@ Gündemin Nabzı
 </h3>
 
 <p>
-Güncel gelişmeleri farklı yönleriyle
-ele alan gazetecilik çalışmaları.
+Mersin ve Türkiye gündeminden
+öne çıkan gelişmeler.
 </p>
 
 <a
-class="news-link"
 href="https://www.ilkha.com/mersin"
 target="_blank"
 rel="noopener noreferrer"
@@ -3558,34 +3587,37 @@ HABERLERİ GÖR →
 
 </div>
 
+
 </article>
 
 
 </div>
 
 
-<div class="visitor">
+<div class="visitor-panel">
+
 
 <div>
 
 <h3>
-Ziyaretçi
+Ziyaretçi İstatistikleri
 </h3>
 
 <p>
-Bu cihazdaki ziyaret sayısı yerel olarak tutulur.
-Gerçek site geneli istatistik için analiz servisi gerekir.
+Bu cihazdaki ziyaret sayısı yerel olarak tutulmaktadır.
+Gerçek site geneli analiz daha sonra bağlanabilir.
 </p>
 
 </div>
 
 
 <div
-id="visitCount"
-class="visit-count"
+id="visitorCount"
+class="visitor-count"
 >
-Ziyaret: 1
+Ziyaret: 0
 </div>
+
 
 </div>
 
@@ -3606,16 +3638,17 @@ id="page-roportajlar"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 SAHADAN
 </div>
 
@@ -3625,18 +3658,18 @@ Röportajlar
 
 </div>
 
-<p class="page-info">
 
-İnsanların düşüncelerini, beklentilerini
-ve hikâyelerini kendi sözleriyle aktaran
-röportaj çalışmalarım.
+<p class="heading-description">
 
+İnsanların düşüncelerini,
+beklentilerini ve hikâyelerini
+kendi sözleriyle aktaran çalışmalar.
 </p>
 
 </div>
 
 
-<div class="interviews">
+<div class="interview-list">
 
 
 <article class="interview">
@@ -3644,7 +3677,7 @@ röportaj çalışmalarım.
 <div class="interview-image">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Röportaj"
 >
 
@@ -3662,8 +3695,8 @@ Sokağın Sesi
 </h3>
 
 <p>
-Vatandaşların gündem, ekonomi
-ve hayat hakkındaki görüşleri.
+Vatandaşların gündem, ekonomi ve
+hayat hakkındaki görüşleri.
 </p>
 
 </div>
@@ -3672,7 +3705,7 @@ ve hayat hakkındaki görüşleri.
 <a
 href="#iletisim"
 class="interview-button"
-onclick="navigate('iletisim')"
+onclick="goToPage('iletisim')"
 >
 İLETİŞİM →
 </a>
@@ -3685,8 +3718,8 @@ onclick="navigate('iletisim')"
 <div class="interview-image">
 
 <img
-src="emreekinci.png"
-alt="Röportaj"
+src="./emreekinci.png"
+alt="Ekonomi röportajı"
 >
 
 </div>
@@ -3713,7 +3746,7 @@ Geçim, iş, kira ve ekonomik koşullar
 <a
 href="#iletisim"
 class="interview-button"
-onclick="navigate('iletisim')"
+onclick="goToPage('iletisim')"
 >
 İLETİŞİM →
 </a>
@@ -3726,8 +3759,8 @@ onclick="navigate('iletisim')"
 <div class="interview-image">
 
 <img
-src="emreekinci.png"
-alt="Gençlik"
+src="./emreekinci.png"
+alt="Gençlik röportajı"
 >
 
 </div>
@@ -3754,7 +3787,7 @@ gençlerin beklentileri.
 <a
 href="#iletisim"
 class="interview-button"
-onclick="navigate('iletisim')"
+onclick="goToPage('iletisim')"
 >
 İLETİŞİM →
 </a>
@@ -3780,16 +3813,17 @@ id="page-videolar"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 GÖRÜNTÜ
 </div>
 
@@ -3799,11 +3833,11 @@ Videolar
 
 </div>
 
-<p class="page-info">
+
+<p class="heading-description">
 
 Saha görüntüleri, haber videoları,
-röportajlar ve özel video çalışmaları.
-
+röportajlar ve özel video çalışmalarım.
 </p>
 
 </div>
@@ -3814,15 +3848,15 @@ röportajlar ve özel video çalışmaları.
 
 <a
 href="#"
-class="video"
+class="video-card"
 >
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Video"
 >
 
-<div class="play">
+<div class="video-play">
 ▶
 </div>
 
@@ -3843,15 +3877,15 @@ Sokaktan İnsan Hikâyeleri
 
 <a
 href="#"
-class="video"
+class="video-card"
 >
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Video"
 >
 
-<div class="play">
+<div class="video-play">
 ▶
 </div>
 
@@ -3872,15 +3906,15 @@ RÖPORTAJ
 
 <a
 href="#"
-class="video"
+class="video-card"
 >
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Video"
 >
 
-<div class="play">
+<div class="video-play">
 ▶
 </div>
 
@@ -3901,6 +3935,7 @@ Dijital İçerikler
 
 </div>
 
+
 </div>
 
 </div>
@@ -3917,16 +3952,17 @@ id="page-fotograflar"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 GÖRSEL ARŞİV
 </div>
 
@@ -3936,12 +3972,11 @@ Fotoğraflar
 
 </div>
 
-<p class="page-info">
+
+<p class="heading-description">
 
 Sahadan, şehirden, etkinliklerden
-ve gazetecilik çalışmalarından
-fotoğraf seçkileri.
-
+ve gazetecilik çalışmalarından kareler.
 </p>
 
 </div>
@@ -3953,7 +3988,7 @@ fotoğraf seçkileri.
 <div class="photo large">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Emre Ekinci"
 >
 
@@ -3963,7 +3998,7 @@ alt="Emre Ekinci"
 <div class="photo">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Gazetecilik"
 >
 
@@ -3973,7 +4008,7 @@ alt="Gazetecilik"
 <div class="photo">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Saha"
 >
 
@@ -3983,7 +4018,7 @@ alt="Saha"
 <div class="photo">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Fotoğraf"
 >
 
@@ -3993,14 +4028,15 @@ alt="Fotoğraf"
 <div class="photo">
 
 <img
-src="emreekinci.png"
-alt="Gazeteci"
+src="./emreekinci.png"
+alt="Etkinlik"
 >
 
 </div>
 
 
 </div>
+
 
 </div>
 
@@ -4018,16 +4054,17 @@ id="page-projeler"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 ÜRETİM
 </div>
 
@@ -4037,12 +4074,12 @@ Projeler
 
 </div>
 
-<p class="page-info">
 
-Gazeteciliğin yanında geliştirdiğim
-yapay zekâ, animasyon, video ve
-dijital medya projeleri.
+<p class="heading-description">
 
+Gazeteciliğin yanında yürüttüğüm
+yapay zekâ, animasyon, dijital medya
+ve özel üretim projeleri.
 </p>
 
 </div>
@@ -4062,9 +4099,9 @@ Tarihî Çizgi Film Projeleri
 </h3>
 
 <p>
-Tarihî olayları animasyon, sinema
-ve yeni nesil üretim araçlarıyla
-anlatmaya yönelik çalışmalar.
+Tarihî olayları animasyon, sinema ve
+yeni nesil üretim araçlarıyla anlatmaya
+yönelik çalışmalar.
 </p>
 
 </article>
@@ -4081,8 +4118,8 @@ Yapay Zekâ & Medya
 </h3>
 
 <p>
-Yapay zekâ destekli görsel,
-video, senaryo ve içerik üretimi.
+Yapay zekâ destekli görsel, video,
+senaryo ve dijital içerik üretimi.
 </p>
 
 </article>
@@ -4099,9 +4136,8 @@ Hakikatin İzinde
 </h3>
 
 <p>
-Gazetecilik, kişisel üretimler,
-video ve dijital yayıncılığı
-bir araya getiren kişisel medya alanı.
+Gazetecilik ve kişisel üretimleri
+bir araya getiren dijital medya projesi.
 </p>
 
 </article>
@@ -4118,8 +4154,8 @@ Araştırma Dosyaları
 </h3>
 
 <p>
-Toplumsal konular, gündem,
-saha gözlemleri ve özel araştırmalar.
+Toplumsal konular, gündem, saha gözlemleri
+ve özel araştırmalar.
 </p>
 
 </article>
@@ -4143,16 +4179,17 @@ id="page-hakkimda"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 EMRE EKİNCİ
 </div>
 
@@ -4162,37 +4199,38 @@ Hakkımda
 
 </div>
 
-<p class="page-info">
+
+<p class="heading-description">
 
 Gazetecilik yolculuğum,
 çalışma alanlarım ve
 kişisel yaklaşımım.
-
 </p>
 
 </div>
 
 
-<div class="about-grid">
+<div class="about-layout">
 
 
 <div class="about-image">
 
 <img
-src="emreekinci.png"
+src="./emreekinci.png"
 alt="Emre Ekinci"
 >
 
 </div>
 
 
-<div class="about-copy">
+<div class="about-content">
+
 
 <p>
 Ben Emre Ekinci.
 Gazeteci, muhabir ve içerik üreticisi olarak
 Mersin başta olmak üzere haber, röportaj,
-video, fotoğraf ve dijital içerik alanlarında
+video, fotoğraf ve dijital medya alanlarında
 çalışmalar yürütüyorum.
 </p>
 
@@ -4220,17 +4258,15 @@ kişisel alanımdır.
 </p>
 
 
-<div class="about-tag">
-
+<div class="about-signature">
 SAHADAYIM. GÖRÜYORUM. ANLATIYORUM.
-
 </div>
 
 
 </div>
 
-
 </div>
+
 
 </div>
 
@@ -4248,16 +4284,17 @@ id="page-iletisim"
 class="page"
 >
 
+
 <div class="inner">
 
-<div class="container">
+<div class="inner-container">
 
 
-<div class="page-head">
+<div class="page-heading">
 
 <div>
 
-<div class="page-label">
+<div class="heading-label">
 İLETİŞİM
 </div>
 
@@ -4268,18 +4305,16 @@ Bana Ulaş
 </div>
 
 
-<p class="page-info">
+<p class="heading-description">
 
-Haber, röportaj, iş birliği,
-proje ve içerik önerileri için
-iletişim kurabilirsiniz.
-
+Haber, röportaj, iş birliği, proje
+ve içerik önerileri için iletişime geçebilirsiniz.
 </p>
 
 </div>
 
 
-<div class="contact-grid">
+<div class="contact-layout">
 
 
 <div class="contact-panel">
@@ -4431,13 +4466,16 @@ işlenmesine ilişkin bilgilendirmeyi okudum.
 
 <button
 type="submit"
-class="button button-red"
+class="hero-btn red"
 >
 MESAJ GÖNDER
 </button>
 
 
 </form>
+
+
+</div>
 
 
 </div>
@@ -4456,11 +4494,12 @@ MESAJ GÖNDER
 
 <footer class="footer">
 
-<div class="container footer-inner">
+<div class="footer-inner">
 
 <p>
 © 2026 EKİNCİ571 • Emre Ekinci
 </p>
+
 
 <p>
 HAKİKATİN İZİNDE
@@ -4472,12 +4511,12 @@ HAKİKATİN İZİNDE
 
 
 <!-- =========================================================
-     MİNİ BOT
+     MİNİ AI
 ========================================================= -->
 
 <button
-class="bot-button"
-onclick="toggleBot()"
+class="ai-button"
+onclick="toggleAI()"
 aria-label="Ekinci MiniBot"
 >
 ✦
@@ -4485,17 +4524,18 @@ aria-label="Ekinci MiniBot"
 
 
 <div
-id="botWindow"
-class="bot-window"
+id="aiWindow"
+class="ai-window"
 >
 
 
-<div class="bot-header">
+<div class="ai-header">
 
 
-<div class="bot-title">
+<div class="ai-title">
 
-<div class="bot-avatar">
+
+<div class="ai-avatar">
 ✦
 </div>
 
@@ -4512,12 +4552,13 @@ Hakikatin İzinde Asistanı
 
 </div>
 
+
 </div>
 
 
 <button
-class="bot-close"
-onclick="toggleBot()"
+class="ai-close"
+onclick="toggleAI()"
 >
 ×
 </button>
@@ -4527,11 +4568,12 @@ onclick="toggleBot()"
 
 
 <div
-id="botMessages"
-class="bot-messages"
+id="aiMessages"
+class="ai-messages"
 >
 
-<div class="message bot">
+
+<div class="ai-message bot">
 
 Merhaba! Ben Ekinci MiniBot.
 Emre Ekinci, Mersin, haberler,
@@ -4540,23 +4582,27 @@ hakkında sorularını yanıtlayabilirim.
 
 </div>
 
+
 </div>
 
 
-<div class="bot-input">
+<div class="ai-input">
+
 
 <input
-id="botInput"
+id="aiInput"
 type="text"
 placeholder="Bir şey sor..."
-onkeydown="botEnter(event)"
+onkeydown="aiEnter(event)"
 >
 
+
 <button
-onclick="sendBotMessage()"
+onclick="sendAIMessage()"
 >
 ➤
 </button>
+
 
 </div>
 
@@ -4571,7 +4617,7 @@ onclick="sendBotMessage()"
 ========================================================= */
 
 
-const pages = [
+const pageList = [
 
     "anasayfa",
     "haberler",
@@ -4585,59 +4631,67 @@ const pages = [
 ];
 
 
-function navigate(page){
+function goToPage(page){
 
-    if(!pages.includes(page)){
+    if(!pageList.includes(page)){
 
         page="anasayfa";
 
     }
 
 
-    pages.forEach(function(name){
+    pageList.forEach(function(name){
 
-        const element =
+        const pageElement =
             document.getElementById(
                 "page-" + name
             );
 
 
-        if(element){
+        if(pageElement){
 
-            element.classList.remove("active");
+            pageElement.classList.remove(
+                "active"
+            );
 
         }
 
     });
 
 
-    const selected =
+    const target =
         document.getElementById(
             "page-" + page
         );
 
 
-    if(selected){
+    if(target){
 
-        selected.classList.add("active");
+        target.classList.add(
+            "active"
+        );
 
     }
 
 
     document
         .querySelectorAll(
-            ".main-nav a"
+            ".main-menu a"
         )
         .forEach(function(link){
 
-            link.classList.remove("active");
+            link.classList.remove(
+                "active"
+            );
 
 
             if(
                 link.dataset.page === page
             ){
 
-                link.classList.add("active");
+                link.classList.add(
+                    "active"
+                );
 
             }
 
@@ -4659,11 +4713,8 @@ function navigate(page){
 
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 
@@ -4678,7 +4729,7 @@ function navigate(page){
 
 /* HASH */
 
-function loadFromHash(){
+function loadHashPage(){
 
     let page =
         window.location.hash
@@ -4693,20 +4744,20 @@ function loadFromHash(){
     }
 
 
-    navigate(page);
+    goToPage(page);
 
 }
 
 
 window.addEventListener(
     "hashchange",
-    loadFromHash
+    loadHashPage
 );
 
 
 window.addEventListener(
     "popstate",
-    loadFromHash
+    loadHashPage
 );
 
 
@@ -4715,39 +4766,47 @@ window.addEventListener(
 ========================================================= */
 
 
-function toggleMobile(){
+function toggleMobileMenu(){
 
     document
-        .getElementById("mobileMenu")
-        .classList.toggle("open");
+        .getElementById(
+            "mobileMenu"
+        )
+        .classList.toggle(
+            "open"
+        );
 
 }
 
 
-function closeMobile(){
+function closeMobileMenu(){
 
     document
-        .getElementById("mobileMenu")
-        .classList.remove("open");
+        .getElementById(
+            "mobileMenu"
+        )
+        .classList.remove(
+            "open"
+        );
 
 }
 
 
-function mobileGo(page){
+function mobileNavigate(page){
 
-    closeMobile();
+    closeMobileMenu();
 
-    navigate(page);
+    goToPage(page);
 
 }
 
 
 /* =========================================================
-   ZİYARETÇİ
+   ZİYARET SAYACI
 ========================================================= */
 
 
-function updateVisitCount(){
+function updateVisitorCount(){
 
     let count =
         parseInt(
@@ -4763,13 +4822,13 @@ function updateVisitCount(){
 
     localStorage.setItem(
         "ekinci_visit_count",
-        count
+        String(count)
     );
 
 
     const element =
         document.getElementById(
-            "visitCount"
+            "visitorCount"
         );
 
 
@@ -4785,7 +4844,7 @@ function updateVisitCount(){
 
 
 /* =========================================================
-   HABERLER
+   HABER ÇEKME
 ========================================================= */
 
 
@@ -4859,17 +4918,21 @@ async function loadNews(){
 
 
         const links =
-            [...doc.querySelectorAll("a")];
+            Array.from(
+                doc.querySelectorAll("a")
+            );
 
 
-        const results = [];
+        const results=[];
 
 
-        links.forEach(function(link){
+        for(
+            const link of links
+        ){
 
             if(results.length >= 6){
 
-                return;
+                break;
 
             }
 
@@ -4885,29 +4948,38 @@ async function loadNews(){
 
 
             if(
-                title.length >= 35 &&
-                title.length <= 170 &&
-                url &&
-                url.includes("ilkha.com")
+                title.length < 35 ||
+                title.length > 170 ||
+                !url ||
+                !url.includes("ilkha.com")
             ){
 
-                if(
-                    !results.some(
-                        item =>
-                            item.title === title
-                    )
-                ){
-
-                    results.push({
-                        title,
-                        url
-                    });
-
-                }
+                continue;
 
             }
 
-        });
+
+            if(
+                results.some(
+                    item =>
+                        item.title === title
+                )
+            ){
+
+                continue;
+
+            }
+
+
+            results.push({
+
+                title:title,
+
+                url:url
+
+            });
+
+        }
 
 
         if(!results.length){
@@ -4919,7 +4991,7 @@ async function loadNews(){
         }
 
 
-        grid.innerHTML = "";
+        grid.innerHTML="";
 
 
         results.forEach(function(item){
@@ -4939,7 +5011,7 @@ async function loadNews(){
                 <div class="news-image">
 
                     <img
-                    src="emreekinci.png"
+                    src="./emreekinci.png"
                     alt="İLKHA Mersin Haberi"
                     >
 
@@ -4947,7 +5019,7 @@ async function loadNews(){
 
                 <div class="news-body">
 
-                    <div class="news-category">
+                    <div class="news-label">
                     İLKHA / MERSİN
                     </div>
 
@@ -4956,12 +5028,11 @@ async function loadNews(){
                     </h3>
 
                     <p>
-                    Haber İLKHA'nın yayınından
-                    takip edilebilir.
+                    Haberin tamamını İLKHA
+                    üzerinde okuyabilirsiniz.
                     </p>
 
                     <a
-                    class="news-link"
                     href="${item.url}"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -4970,7 +5041,6 @@ async function loadNews(){
                     </a>
 
                 </div>
-
             `;
 
 
@@ -4984,12 +5054,10 @@ async function loadNews(){
             " haber bulundu. Kaynak: İLKHA Mersin";
 
 
-    }
-
-    catch(error){
+    }catch(error){
 
         status.innerText =
-            "Canlı aktarım şu anda kullanılamıyor. Resmî İLKHA Mersin sayfası aşağıdaki bağlantıdadır.";
+            "Canlı haber aktarımı şu anda kullanılamıyor. Resmî İLKHA Mersin sayfasını açabilirsiniz.";
 
     }
 
@@ -5000,56 +5068,71 @@ function escapeHTML(text){
 
     return text
 
-        .replaceAll("&","&amp;")
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
 
-        .replaceAll("<","&lt;")
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
 
-        .replaceAll(">","&gt;")
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
 
-        .replaceAll('"',"&quot;")
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
 
-        .replaceAll("'","&#039;");
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
 
 }
 
 
 /* =========================================================
-   MINI BOT
+   MINI AI
 ========================================================= */
 
 
-function toggleBot(){
+function toggleAI(){
 
     document
         .getElementById(
-            "botWindow"
+            "aiWindow"
         )
-        .classList.toggle("open");
+        .classList.toggle(
+            "open"
+        );
 
 }
 
 
-function botEnter(event){
+function aiEnter(event){
 
-    if(
-        event.key === "Enter"
-    ){
+    if(event.key === "Enter"){
 
-        sendBotMessage();
+        sendAIMessage();
 
     }
 
 }
 
 
-function addBotMessage(
+function addAIMessage(
     text,
     type
 ){
 
     const box =
         document.getElementById(
-            "botMessages"
+            "aiMessages"
         );
 
 
@@ -5060,14 +5143,16 @@ function addBotMessage(
 
 
     message.className =
-        "message " + type;
+        "ai-message " + type;
 
 
     message.innerText =
         text;
 
 
-    box.appendChild(message);
+    box.appendChild(
+        message
+    );
 
 
     box.scrollTop =
@@ -5076,7 +5161,7 @@ function addBotMessage(
 }
 
 
-function botReply(question){
+function getAIReply(question){
 
     const q =
         question
@@ -5110,7 +5195,7 @@ function botReply(question){
         q.includes("mersin")
     ){
 
-        return "Mersin, Emre Ekinci'nin saha gazeteciliğinde önemli bir çalışma alanı. Sitedeki Haberler bölümünden Mersin gündemini takip edebilirsiniz.";
+        return "Mersin, Emre Ekinci'nin saha gazeteciliğinde önemli bir çalışma alanı. Haberler bölümünden Mersin gündemini takip edebilirsiniz.";
 
     }
 
@@ -5120,7 +5205,7 @@ function botReply(question){
         q.includes("haber")
     ){
 
-        return "Mersin haberleri bölümünde İLKHA'nın Mersin sayfasına ulaşabilirsiniz. Haberlerin tam metni kaynağında okunabilir.";
+        return "Haberler bölümünde İLKHA Mersin sayfasına ve yayımlanan içeriklere ulaşabilirsiniz.";
 
     }
 
@@ -5139,7 +5224,7 @@ function botReply(question){
         q.includes("video")
     ){
 
-        return "Videolar bölümünde saha görüntüleri, röportajlar ve özel dijital çalışmalar yer alıyor.";
+        return "Videolar bölümünde saha görüntüleri, röportajlar ve özel çalışmalar yer alıyor.";
 
     }
 
@@ -5149,7 +5234,7 @@ function botReply(question){
         q.includes("fotograf")
     ){
 
-        return "Fotoğraflar bölümünde gazetecilik ve saha çalışmalarından görsel seçkiler bulunuyor.";
+        return "Fotoğraflar bölümünde saha ve gazetecilik çalışmalarından görsel seçkiler bulunuyor.";
 
     }
 
@@ -5175,18 +5260,16 @@ function botReply(question){
     }
 
 
-    return "Bu konuda henüz hazır bir yanıtım yok. Emre Ekinci, Mersin, haberler, röportajlar, videolar ve projeler hakkında bana soru sorabilirsin.";
+    return "Bu konuda hazır bir yanıtım yok. Emre Ekinci, Mersin, haberler, röportajlar, videolar veya projeler hakkında bana soru sorabilirsin.";
 
 }
 
 
-/* BOT MESAJI */
-
-function sendBotMessage(){
+function sendAIMessage(){
 
     const input =
         document.getElementById(
-            "botInput"
+            "aiInput"
         );
 
 
@@ -5201,20 +5284,20 @@ function sendBotMessage(){
     }
 
 
-    addBotMessage(
+    addAIMessage(
         text,
         "user"
     );
 
 
-    input.value = "";
+    input.value="";
 
 
     setTimeout(
         function(){
 
-            addBotMessage(
-                botReply(text),
+            addAIMessage(
+                getAIReply(text),
                 "bot"
             );
 
@@ -5242,7 +5325,7 @@ document
 
 
             alert(
-                "Form arayüzü hazır. Gerçek e-posta veya kayıt servisi bağlandığında mesaj doğrudan iletilebilir."
+                "İletişim formu hazır. Gerçek gönderim sistemi daha sonra bağlanabilir."
             );
 
 
@@ -5261,9 +5344,9 @@ document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        updateVisitCount();
+        updateVisitorCount();
 
-        loadFromHash();
+        loadHashPage();
 
     }
 );
